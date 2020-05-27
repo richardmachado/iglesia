@@ -1,19 +1,19 @@
 import React from 'react';
-import logo from './logo.jpg';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
+
+import Navigation from './Components/Navigation';
+import Home from './Components/Home';
+import Footer from './Components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Iglesia de Cristo
-        </p>
-        <p>
-          Servicio - Domingo - 1PM 
-     </p>
-      </header>
+       <Navigation />
+      <Switch>
+        <Route exact="/" component={Home} />
+      </Switch>
+      <Footer />
     </div>
   );
 }
