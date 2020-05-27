@@ -2,20 +2,23 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 const API = process.env.REACT_APP_API_KEY;
 
-function Verse(props) {
+function Biblia(props) {
     const [neo, setNeo] = useState([]);
     const options = {
-        headers: {"Api-key": API}
+        headers: {
+            "Api-key": API,
+            "Access-Control-Allow-Origin": null   },
+        
     }
 
 
   useEffect(() => {
     axios
 
-        .get("https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/chapters/GEN.1/verses", options)
+        .get("https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/books", options)
       .then(response => {
           console.log(response)
-        //   setNeo(response.data);
+          setNeo(response.data);
    
       })
       .catch(err => {
@@ -30,13 +33,12 @@ function Verse(props) {
   return (
     <div className="body">
       <div className="container">
-              <h1 className="display-4 my3"><span classname="text-dark"> Santa </span>  Biblia</h1>  
-        <h1>Versos</h1>      
+        <h1 className="display-4 my3"><span classname="text-dark"> Santa </span>  Biblia</h1>        
         
          {neo.map(biblename => {
           return (
            <div>
-                  <h2>Verso de  {biblename.reference}</h2>
+                  <h2>Libro de </h2>
                 
              </div> 
                     
@@ -51,4 +53,4 @@ function Verse(props) {
   );
 }
 
-export default Verse;
+export default Biblia;
