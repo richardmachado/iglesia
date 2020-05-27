@@ -5,7 +5,7 @@ const API = process.env.REACT_APP_API_KEY;
 function NEO(props) {
     const [neo, setNeo] = useState([]);
     const options = {
-        headers: {"Api-key": API}
+        headers: {"Aigpi-key": API}
     }
 
 
