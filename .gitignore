@@ -1,10 +1,9 @@
 
 # api keys
-.env 
+.env
 
 # Don't track content of these folders
 node_modules/
-someOtherfoler/
 
 
 # Compiled source #
