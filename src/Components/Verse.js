@@ -1,28 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-
-
-
-
-// // function for today so that it automatically updates the site
-
-// var today = new Date()
-// var dd = String(today.getUTCDate()).padStart(2, '0');
-// var mm = String(today.getMonth()+1).padStart(2, '0'); //January is 0!
-// var yyyy = today.getFullYear();
-// today = yyyy + '-' + mm + '-' + dd ;
-
-
-
-
-// // end of today function
-
+const API = process.env.REACT_APP_API_KEY;
 
 function NEO(props) {
     const [neo, setNeo] = useState([]);
     const options = {
-        headers: {"Api-key": "59fc91093130021fbd5e3439e270c4b2"}
+        headers: {"Api-key": API}
     }
 
 
@@ -52,7 +35,8 @@ function NEO(props) {
          {neo.map(biblename => {
           return (
            <div>
-                  <p>Libro de  {biblename.name}</p>
+                  <h2>Libro de  {biblename.name}</h2>
+                
              </div> 
                     
   )
