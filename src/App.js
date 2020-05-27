@@ -13,15 +13,16 @@ import Verse from './Components/Verse';
 
 
 function App() {
+  
   return (
     <div className="App">
       <Navigation />
       
       <Switch>
         <Route exact path ="/" component={Home} />
-        <Route path="/biblia" component={Biblia} />
-        <Route path="/genesis" component={Chapters} />
-        <Route path="/verses" components={Verse} />
+        <Route exact path="/biblia" component={Biblia} />
+        <Route path="/verses" component={Verse} />
+        <Route path="/biblia/:id" component={Chapters} />
       </Switch>
       <Footer />
     </div>

@@ -3,11 +3,12 @@ import axios from "axios";
 const API = process.env.REACT_APP_API_KEY;
 
 function NEO(props) {
+    console.log(props);
     const [neo, setNeo] = useState([]);
     const options = {
         headers: {"Api-key": API}
     }
-
+    const Bookname = props.history.location
 
   useEffect(() => {
     axios
