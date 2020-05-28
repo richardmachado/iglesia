@@ -33,14 +33,14 @@ function AddTemas (props) {
   
     return (
         <Container>
-        <Login>Anadir un Tema</Login>
+        <Login>Añadir un Tema</Login>
       
         <form onSubmit={handleSubmit(onSubmit)}>
       <StyledForm>
         <label for="title"> </label>
           <Inputs 
             type="text"  
-            placeholder="Titulo" 
+            placeholder="Título" 
             id="title"
             name="title" 
           
@@ -71,14 +71,16 @@ function AddTemas (props) {
       ></span>
 
 <label for="feedback"></label>
-          <Inputs
+          <textarea
+            rows="20"
+            cols="40"
             type="text" 
-            placeholder="Escribir tema aqui" 
+            placeholder="Escribir tema aquí" 
             id="body"
             name="body" 
             aria-invalid={errors.body ? 'true' : 'false'}
             aria-describedby="error-body-required error-title-maxLength"
-            ref={register({required: true, minLength: 1, maxLength: 1024})} 
+            ref={register({required: true, minLength: 1, maxLength: 10024})} 
           />
     
          
