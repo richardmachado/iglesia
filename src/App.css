@@ -37,3 +37,6 @@
     transform: rotate(360deg);
   }
 }
+.tema-box {
+border: solid black 1px;
+}

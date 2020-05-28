@@ -10,6 +10,9 @@ import Biblia from './Components/Biblia';
 // import Chapters from './Components/Chapters';
 import Verse from './Components/Verse';
 import Sections from './Components/Sections';
+import Temas from './Components/Temas';
+import AddTemas from './Components/AddTemas';
+import Login from './Components/Login';
 
 
 
@@ -25,6 +28,9 @@ function App() {
         <Route path="/verses" component={Verse} />
         {/* <Route path="/:id" component={Chapters} /> */}
         <Route path="/sections" component={Sections} />
+        <Route path="/temas" component={Temas} />
+        <Route path="/addtemas" component={AddTemas} />
+        <Route path="/login" component={Login} />
       </Switch>
       <Footer />
     </div>
