@@ -36,7 +36,7 @@ console.log(props)
          {neo.map(biblename => {
           return (
            <div>
-                  <h2>Libro de <Link to={`/biblia/${biblename.id}`}> {biblename.name}</Link> </h2>
+                  <h2>Libro de <Link to={`/${biblename.id}`}> {biblename.name}</Link> </h2>
                 
              </div> 
                     

@@ -3,17 +3,17 @@ import axios from "axios";
 const API = process.env.REACT_APP_API_KEY;
 
 function NEO(props) {
-    console.log(props);
+    console.log(props.location.pathname);
     const [neo, setNeo] = useState([]);
     const options = {
         headers: {"Api-key": API}
     }
-    const Bookname = props.history.location
+    const bookname = props.location.pathname;
 
   useEffect(() => {
     axios
 
-        .get(`https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/books/GEN/chapters`, options)
+        .get(`https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/books${bookname}/chapters`, options)
       .then(response => {
           console.log(response.data.data)
           setNeo(response.data.data);

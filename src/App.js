@@ -22,7 +22,7 @@ function App() {
         <Route exact path ="/" component={Home} />
         <Route exact path="/biblia" component={Biblia} />
         <Route path="/verses" component={Verse} />
-        <Route path="/biblia/:id" component={Chapters} />
+        <Route path="/:id" component={Chapters} />
       </Switch>
       <Footer />
     </div>
