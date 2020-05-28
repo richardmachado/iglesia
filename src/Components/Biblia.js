@@ -8,7 +8,7 @@ console.log(props)
     const [neo, setNeo] = useState([]);
     const options = {
         headers: {
-            "Api-key": API},   
+            "Api-key": "59fc91093130021fbd5e3439e270c4b2"},   
     }
   useEffect(() => {
     axios
