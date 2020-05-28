@@ -13,7 +13,7 @@ function NEO(props) {
   useEffect(() => {
     axios
 
-        .get("https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/books/GEN/chapters", options)
+        .get(`https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/books/GEN/chapters`, options)
       .then(response => {
           console.log(response.data.data)
           setNeo(response.data.data);
