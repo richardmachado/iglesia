@@ -1,28 +1,31 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom'
-const API = process.env.REACT_APP_API_KEY;
+
 
 function Biblia(props) {
-console.log(props)
+
     const [neo, setNeo] = useState([]);
     const options = {
         headers: {
-            "Api-key": "59fc91093130021fbd5e3439e270c4b2"},   
+            "x-rapidapi-key": "4ff44bf1d0mshb58109f3c94d09ep13f9adjsn37028a25638a",
+            "x-rapidapi-host" : "ajith-holy-bible.p.rapidapi.com",
+            "useQueryString" : "true"
+          },   
     }
   useEffect(() => {
     axios
 
-        .get("https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/books", options)
+        .get("https://ajith-holy-bible.p.rapidapi.com/GetBooks", options)
       .then(response => {
-          console.log(response)
-          setNeo(response.data.data);
+          console.log(response.data)
+          setNeo(response.data);
    
       })
       .catch(err => {
         console.log(err);
       });
-  }, []);
+  }, [options]);
   if (!neo) {
     return <div className="sweet-loading">
    <h2>Loading...</h2>
@@ -36,7 +39,7 @@ console.log(props)
          {neo.map(biblename => {
           return (
            <div>
-                  <h2>Libro de <Link to={`/biblia/${biblename.id}`}> {biblename.name}</Link> </h2>
+                 <h1>{biblename.data}</h1>
                 
              </div> 
                     
