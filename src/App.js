@@ -7,8 +7,9 @@ import Navigation from './Components/Navigation';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
 import Biblia from './Components/Biblia';
-import Chapters from './Components/Chapters';
+// import Chapters from './Components/Chapters';
 import Verse from './Components/Verse';
+import Sections from './Components/Sections';
 
 
 
@@ -22,7 +23,8 @@ function App() {
         <Route exact path ="/" component={Home} />
         <Route exact path="/biblia" component={Biblia} />
         <Route path="/verses" component={Verse} />
-        <Route path="/:id" component={Chapters} />
+        {/* <Route path="/:id" component={Chapters} /> */}
+        <Route path="/sections" component={Sections} />
       </Switch>
       <Footer />
     </div>

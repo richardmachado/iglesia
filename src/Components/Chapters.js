@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 const API = process.env.REACT_APP_API_KEY;
 
-function NEO(props) {
+function Chapters(props) {
     console.log(props.location.pathname);
     const [neo, setNeo] = useState([]);
     const options = {
@@ -51,4 +51,4 @@ function NEO(props) {
   );
 }
 
-export default NEO;
+export default Chapters;
