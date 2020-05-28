@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../App.css";
+
 const API = process.env.REACT_APP_API_KEY;
 
-function Sections(props) {
-    console.log(props.location.pathname);
-    const [neon, setNeo] = useState([]);
-    const options = {
-        headers: {"Api-key": "59fc91093130021fbd5e3439e270c4b2"}
-    }
-    const bookname = props.location.pathname;
+const options = {
+           headers: {"Api-key": "59fc91093130021fbd5e3439e270c4b2"}
+      }
 
+function Sections(props) {
+  
+    const [ seccion, setSeccion ] = useState();
+  
   useEffect(() => {
     axios
-
-        .get("https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/sections/GEN.S1", options)
+        .get("https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/sections/MAT.S1", options)
       .then(response => {
-          console.log(response.data)
-          setNeo(response.data.data);
+          console.log(response.data.data)
+          setSeccion(response.data.data);
       })
       .catch(err => {
         console.log(err);
       });
   }, []);
-  if (!neon) {
+  if (!seccion) {
     return <div>
    <h2>Loading...</h2>
          </div>;
@@ -30,10 +31,13 @@ function Sections(props) {
   return (
     <div className="body">
     <div className="container">
-      <h1 className="display-4 my3"><span classname="text-dark"> Santa </span>  Biblia</h1>        
-              {neon.map(biblename => {
+      <h1 className="display-4 my3"><span classname="text-dark"> </span> Seccion </h1>        
+              {seccion.map(biblename => {
                   return (
-                      <h2>Test {biblename.title} </h2>       
+                      <div>
+                       <h1>{biblename.chapterId} </h1>
+                       
+                      </div> 
               )
               })}
  
