@@ -52,10 +52,10 @@ function Bible () {
 
 
   <label className= "prompt" htmlFor="chapter">
-          Enter a book number
+          Enter a chapter number
         <input type="text" 
         onChange={event => handleChange(event)}
-        placeholder="book number"
+        placeholder="chapter number"
         name ="chapter">
         </input>
       </label>
@@ -103,8 +103,6 @@ function Bible () {
             <option value="Haggai">Haggai</option>
             <option value="Zechariah">Zechariah</option>
             <option value="Malachi">Malachi</option>
-
-
         </select>
       </label>
    
