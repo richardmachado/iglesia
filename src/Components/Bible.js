@@ -73,10 +73,10 @@ function Bible () {
             <option value="Joshua">Joshua</option>
             <option value="Judges">Judges</option>
             <option value="Ruth">Ruth</option>
-            <option value="1Samuel">1 Samuel (1 Kings)</option>
-            <option value="2Samuel">2 Samuel (2 Kings)</option>
-            <option value="1Kings">1 Kings (3 Kings)</option>
-            <option value="2Kings">2 Kings (4 Kings)</option>
+            <option value="1 Samuel">1 Samuel (1 Kings)</option>
+            <option value="2 Samuel">2 Samuel (2 Kings)</option>
+            <option value="1 Kings">1 Kings (3 Kings)</option>
+            <option value="2 Kings">2 Kings (4 Kings)</option>
             <option value="1 Chronicles">1 Chronicles</option>
             <option value="2 Chronicles">2 Chronicles</option>
             <option value="Ezra">Ezra</option>
