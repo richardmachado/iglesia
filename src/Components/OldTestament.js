@@ -10,7 +10,6 @@ font-style: bold;
 
 function OldTestament () {
     const [forms, setForms] = useState([]);
-    console.log(forms)
     const [chapter, setChapter] = useState(1);
     const [book, setBook]= useState("GENESIS")
 
