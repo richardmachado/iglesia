@@ -45,7 +45,7 @@ function NewTestament () {
   
     return (
       <div className="forms">
-  <h1>New Testament - </h1>
+  <h1>New Testament </h1>
 
   <h1>  Book Selected {book} <br></br>Chapter Selected {chapter}</h1>
 

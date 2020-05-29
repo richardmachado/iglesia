@@ -46,7 +46,7 @@ function OldTestament () {
   
     return (
       <div className="forms">
-  <h1>Old Testament - </h1>
+  <h1>Old Testament</h1>
 
   <h1>  Book Selected {book} <br></br>Chapter Selected {chapter}</h1>
 
