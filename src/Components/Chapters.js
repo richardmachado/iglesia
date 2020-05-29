@@ -6,7 +6,7 @@ function Chapters(props) {
     console.log(props.location.pathname);
     const [neo, setNeo] = useState([]);
     const options = {
-        headers: {"Api-key": "59fc91093130021fbd5e3439e270c4b2"}
+        headers: {"Api-key": ""}
     }
     const bookname = props.location.pathname;
 

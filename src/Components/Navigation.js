@@ -42,9 +42,9 @@ class Header extends Component {
                         <NavItem>
                                 <NavLink href="/login">Login</NavLink>
                             </NavItem>
-                            {/* <NavItem>
-                                <NavLink href="/biblia">Biblia</NavLink>
-                            </NavItem> */}
+                            <NavItem>
+                                <NavLink href="/bible">Bible</NavLink>
+                            </NavItem>
                             <NavItem>
                                 <NavLink href="/temas">Temas</NavLink>
                             </NavItem>
