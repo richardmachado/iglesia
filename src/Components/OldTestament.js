@@ -8,7 +8,7 @@ margin-left: 4rem;
 font-style: bold;
 `
 
-function Bible () {
+function OldTestament () {
     const [forms, setForms] = useState([]);
     console.log(forms)
     const [chapter, setChapter] = useState(1);
@@ -46,7 +46,7 @@ function Bible () {
   
     return (
       <div className="forms">
-  <h1>Read the Bible</h1>
+  <h1>Old Testament - </h1>
 
   <h1>  Book Selected {book} <br></br>Chapter Selected {chapter}</h1>
 
@@ -117,4 +117,4 @@ function Bible () {
     );
   }
   
-  export default Bible;
+  export default OldTestament;

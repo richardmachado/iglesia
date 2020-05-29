@@ -42,9 +42,21 @@ class Header extends Component {
                         <NavItem>
                                 <NavLink href="/login">Login</NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink href="/bible">Bible</NavLink>
-                            </NavItem>
+                            <UncontrolledDropdown nav inNavbar>
+                                <DropdownToggle nav caret>
+                                    Bible
+                </DropdownToggle>
+                                <DropdownMenu right>
+                                    <DropdownItem>
+                                    <NavLink href="/oldtestament">Old Testament</NavLink>
+                  </DropdownItem>
+                                    <DropdownItem>
+                                    <NavLink href="/newtestament">New Testament</NavLink>
+                  </DropdownItem>
+                                  
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+                          
                             <NavItem>
                                 <NavLink href="/temas">Temas</NavLink>
                             </NavItem>

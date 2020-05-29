@@ -6,13 +6,15 @@ import './App.css';
 import Navigation from './Components/Navigation';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
-import Bible from './Components/Bible';
+
 import Chapters from './Components/Chapters';
 import Verse from './Components/Verse';
 import Sections from './Components/Sections';
 import Temas from './Components/Temas';
 import AddTemas from './Components/AddTemas';
 import Login from './Components/Login';
+import OldTestament from './Components/OldTestament';
+import NewTestament from './Components/NewTestament';
 
 
 
@@ -24,7 +26,8 @@ function App() {
       
       <Switch>
         <Route exact path ="/" component={Home} />
-        <Route exact path="/bible" component={Bible} />
+        <Route path="/oldtestament" component={OldTestament} />
+        <Route path="/newtestament" component={NewTestament} />
         <Route path="/verses" component={Verse} />
     
         <Route path="/sections" component={Sections} />
