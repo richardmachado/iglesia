@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import styled from 'styled-components';
 
+const API = process.env.REACT_APP_ENGLISH_KEY;
+
 const Chapter = styled.div `
 width: 80%;
 margin-left: 4rem;
@@ -22,7 +24,7 @@ function NewTestament () {
     };
     const options = {
         headers: {
-            "x-rapidapi-key": "4ff44bf1d0mshb58109f3c94d09ep13f9adjsn37028a25638a",
+            "x-rapidapi-key": API,
             "x-rapidapi-host" : "ajith-holy-bible.p.rapidapi.com",
             "useQueryString" : "true"
           },   

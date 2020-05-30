@@ -5,7 +5,7 @@ import "../App.css";
 const API = process.env.REACT_APP_API_KEY;
 
 const options = {
-           headers: {"Api-key": "59fc91093130021fbd5e3439e270c4b2"}
+           headers: {"Api-key": API}
       }
 
 function Sections(props) {
