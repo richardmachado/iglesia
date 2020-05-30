@@ -24,7 +24,7 @@ function OldTestament () {
     };
     const options = {
         headers: {
-            "x-rapidapi-key": API,
+            "x-rapidapi-key": "4ff44bf1d0mshb58109f3c94d09ep13f9adjsn37028a25638a",
             "x-rapidapi-host" : "ajith-holy-bible.p.rapidapi.com",
             "useQueryString" : "true"
           },   
