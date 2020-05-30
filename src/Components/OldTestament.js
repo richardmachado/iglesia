@@ -87,23 +87,24 @@ function OldTestament () {
             <option value="Psalms">Psalms</option>
             <option value="Proverbs">Proverbs</option>
             <option value="Ecclesiastes">Ecclesiastes</option>
+            <option value="Song of Solomon">Song of Solomon</option>
             <option value="Isaiah">Isaiah</option>
             <option value="Jeremiah">Jeremiah</option>
             <option value="Lamentations">Lamentations</option>
-            <option value="Ezekiel">Ezekiel)</option>
-            <option value="Daniel">Daniel</option>
-            <option value="Hosea">Hosea</option>
-            <option value="Joel">Joel</option>
-            <option value="Amos">Amos</option>
-            <option value="Obadiah">Obadiah</option>
-            <option value="Jonah">Jonah</option>
-            <option value="Micah">Micah</option>
-            <option value="Nahum">Nahum</option>
-            <option value="Habakkuk">Habakkuk</option>
-            <option value="Zephaniah">Zephaniah</option>
-            <option value="Haggai">Haggai</option>
-            <option value="Zechariah">Zechariah</option>
-            <option value="Malachi">Malachi</option>
+            <option value="Ezekiel">Ezekiel</option>
+            <option value="DAN">Daniel</option>
+            <option value="HOS">Oseas</option>
+            <option value="JOL">Joel</option>
+            <option value="AMO">Amós</option>
+            <option value="OBA">Abdías</option>
+            <option value="JON">Jonás</option>
+            <option value="MIC">Miqueas</option>
+            <option value="NAM">Nahúm</option>
+            <option value="HAB">Habacuc</option>
+            <option value="ZEP">Sofonías</option>
+            <option value="HAG">Hageo</option>
+            <option value="ZEC">Zacarías</option>
+            <option value="MAL">Malaquías</option>
         </select>
       </label>
    

@@ -54,6 +54,22 @@ class Header extends Component {
                                   
                                 </DropdownMenu>
                             </UncontrolledDropdown>
+                            <UncontrolledDropdown nav inNavbar>
+                                <DropdownToggle nav caret>
+                                    Biblia
+                </DropdownToggle>
+                                <DropdownMenu right>
+                                    <DropdownItem>
+                                    <NavLink href="/antiguo">Antiguo Testamento</NavLink>
+                  </DropdownItem>
+                                    <DropdownItem>
+                                    <NavLink href="/nuevo">Nuevo Testamento</NavLink>
+                  </DropdownItem>
+                                  
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+
+                          
                           
                             <NavItem>
                                 <NavLink href="/temas">Temas</NavLink>

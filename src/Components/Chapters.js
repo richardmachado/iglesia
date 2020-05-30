@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-const API = process.env.REACT_APP_API_KEY;
+
 
 function Chapters(props) {
     console.log(props.location.pathname);
     const [neo, setNeo] = useState([]);
     const options = {
-        headers: {"Api-key": ""}
+        headers: {"Api-key": "59fc91093130021fbd5e3439e270c4b2"}
     }
     const bookname = props.location.pathname;
 

@@ -8,7 +8,7 @@ function Biblia(props) {
     const [neo, setNeo] = useState([]);
     const options = {
         headers: {
-            "x-rapidapi-key": "",
+            "x-rapidapi-key": "59fc91093130021fbd5e3439e270c4b2",
             "x-rapidapi-host" : "ajith-holy-bible.p.rapidapi.com",
             "useQueryString" : "true"
           },   
