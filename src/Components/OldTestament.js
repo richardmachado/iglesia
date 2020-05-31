@@ -7,7 +7,7 @@ const API = process.env.REACT_APP_ENGLISH_KEY;
 const Chapter = styled.div `
 width: 80%;
 margin-left: 4rem;
-font-style: bold;
+font-weight: bold;
 `
 
 function OldTestament () {
@@ -110,7 +110,8 @@ function OldTestament () {
    
        {forms.map(chapterinfo => {
          
-        return  <Chapter>
+         return <Chapter>
+           <br></br>
          <p>{chapterinfo.Output}</p>
          </Chapter>
        })} 

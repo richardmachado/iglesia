@@ -7,7 +7,7 @@ const API = process.env.REACT_APP_ENGLISH_KEY;
 const Chapter = styled.div `
 width: 80%;
 margin-left: 4rem;
-font-style: bold;
+font-weight: bold;
 `
 
 function Antiguo() {
@@ -115,6 +115,7 @@ function Antiguo() {
         {forms.map(chapterinfo => {
          
           return <Chapter>
+             <br></br>
             <p>{stripHTML(chapterinfo.content)}</p>
           </Chapter>
         })}

@@ -7,15 +7,19 @@ const API = process.env.REACT_APP_ENGLISH_KEY;
 const Chapter = styled.div `
 width: 80%;
 margin-left: 4rem;
-font-style: bold;
+font-weight: bold;
 `
 
 function Nuevo() {
-  const [forms, setForms] = useState([]);
-  const [chapter, setChapter] = useState(1);
-  const [book, setBook] = useState("MAT");
+    const [forms, setForms] = useState([]);
+    const [chapter, setChapter] = useState(1);
+    const [book, setBook] = useState("MAT"); 
+    
   function stripHTML(text) {
-    return text.replace(/<.*?>/gm, '');
+    return text.replace(/<.*?>/gm, ' ');
+  }
+    function addBreak(text) {
+        return text.replace(' ','_' )
     }
 
     const handleChange = event => {
@@ -104,7 +108,7 @@ function Nuevo() {
         {forms.map(chapterinfo => {
          
             return <Chapter>
-                <h1>{chapterinfo.nameLong}</h1>
+               <br></br>
                 <p>{stripHTML(chapterinfo.content)}</p>
               
           </Chapter>
