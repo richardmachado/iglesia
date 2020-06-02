@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import styled from 'styled-components';
 
-const API = process.env.REACT_APP_ENGLISH_KEY;
 
 const Chapter = styled.div `
 width: 80%;
