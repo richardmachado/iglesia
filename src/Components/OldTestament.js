@@ -17,10 +17,6 @@ function OldTestament () {
     const [chapter, setChapter] = useState(1);
   const [book, setBook] = useState("GENESIS");
   
-  const [errors, setErrors] = useState({
-    chapter: ""
-  
-  });
 
     const handleChange = event => {
       setChapter(event.target.value);
@@ -143,7 +139,6 @@ function OldTestament () {
             <option value="69">69</option> 
             <option value="70">70</option> 
             <option value="71">71</option> 
-
             <option value="72">72</option> 
             <option value="73">73</option> 
             <option value="74">74</option> 
