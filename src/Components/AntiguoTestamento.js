@@ -14,7 +14,7 @@ function Antiguo() {
   const [chapter, setChapter] = useState(1);
   const [book, setBook] = useState("GEN");
   function stripHTML(text) {
-    return text.replace(/<.*?>/gm, '');
+    return text.replace(/<.*?>/gm, ' ');
     }
 
     const handleChange = event => {
