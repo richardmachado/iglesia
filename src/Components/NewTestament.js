@@ -52,7 +52,7 @@ function NewTestament () {
       <div className="forms">
   <h1>New Testament </h1>
 
-  <h1>  Book Selected {book} <br></br>Chapter Selected {chapter}</h1>
+  <h1>  Book of {book} <br></br>Chapter : {chapter}</h1>
 
 
   <label  htmlFor="chapter">

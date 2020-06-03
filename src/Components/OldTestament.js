@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import styled from 'styled-components';
 
-
-
 const Chapter = styled.div `
 width: 80%;
 margin-left: 4rem;
@@ -58,7 +56,7 @@ function OldTestament () {
       <div className="forms">
   <h1>Old Testament</h1>
 
-  <h1>  Book Selected {book} <br></br>Chapter Selected {chapter}</h1>
+  <h1>  Book of {book} <br></br>Chapter : {chapter}</h1>
 
 
   <label  htmlFor="chapter">
@@ -279,9 +277,6 @@ function OldTestament () {
                
                  </>
              ))}
-           
-           
-        
          </Chapter>
        })} 
       </div>
