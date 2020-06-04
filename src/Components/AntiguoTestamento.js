@@ -16,10 +16,6 @@ function Antiguo() {
   const [chapter, setChapter] = useState(1);
   const [book, setBook] = useState("GEN");
 
-  function stripHTML(text) {
-    return text.replace(/<.*?>/gm, ' ');
-    }
-
     const handleChange = event => {
       setChapter(event.target.value);
     };
@@ -33,8 +29,12 @@ function Antiguo() {
       },
     }
   
+    function stripHTML(text) {
+      return text.replace(/<.*?>/gm, ' ');
+    }
+  
     function processData() {
-      return forms[0].Output.split(/\s+(?=\d)/g);
+      return forms[0].content.split(/\s+(?=\d)/g);
     }
   
 
@@ -268,11 +268,19 @@ function Antiguo() {
    
         {forms.map(chapterinfo => {
          
-          return <Chapter>
+         return <Chapter>
+          
              <br></br>
-            <p>{stripHTML(chapterinfo.content)}</p>
-          </Chapter>
-        })}
+             {processData().map((data2) => (
+               <>
+                 <p>{stripHTML(data2)}</p>
+                 <br></br>
+              
+               
+                 </>
+             ))}
+         </Chapter>
+       })} 
       </div>
     
     );
