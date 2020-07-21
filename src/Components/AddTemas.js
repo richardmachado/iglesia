@@ -18,7 +18,7 @@ function AddTemas (props) {
      
   
       axios
-        .post("https://portfolio-machado.herokuapp.com/api/feedback", data)
+        .post("https://iglesia-backend.herokuapp.com/api/feedback", data)
   
         .then(res => {
 
@@ -58,7 +58,7 @@ function AddTemas (props) {
             : "none"
         }}
       >
-        Titulo is requerido
+        Titulo es obligatorio
       </span>
       <span
         role="alert"
@@ -70,41 +70,58 @@ function AddTemas (props) {
         }}
       ></span>
 
-<label for="feedback"></label>
+          <label for="feedback"></label>
           <textarea
-            rows="20"
-            cols="40"
+        
             type="text" 
-            placeholder="Escribir tema aquí" 
-            id="body"
-            name="body" 
-            aria-invalid={errors.body ? 'true' : 'false'}
+            placeholder="Primer párrafo"
+            id="body1"
+            name="body1" 
+            aria-invalid={errors.body1 ? 'true' : 'false'}
             aria-describedby="error-body-required error-title-maxLength"
             ref={register({required: true, minLength: 1, maxLength: 10024})} 
           />
     
-         
-
           <span
         role="alert"
         id="error-name-required"
         style={{
-          display: errors.body && errors.body.type === "required"
+          display: errors.body1 && errors.body1.type === "required"
             ? "block"
             : "none"
         }}
       >
-       Tema is requerido
+       Primer párrafo es obligatorio
       </span>
       <span
         role="alert"
         id="error-feedback-maxLength"
         style={{
-          display: errors.body && errors.body.type === "maxLength"
+          display: errors.body1 && errors.body1.type === "maxLength"
             ? "block"
             : "none"
         }}
       ></span>
+       <label for="feedback"></label>
+          <textarea
+        
+            type="text" 
+            placeholder="Segundo párrafo" 
+            id="body2"
+            name="body2" 
+            
+            ref={register({required: false, minLength: 1, maxLength: 10024})} 
+          />
+           <label for="feedback"></label>
+          <textarea
+        
+            type="text" 
+            placeholder="Tercer párrafo" 
+            id="body3"
+            name="body3" 
+            ref={register({required: false, minLength: 1, maxLength: 10024})} 
+           
+          />
        <Inputs type="submit" />
        </StyledForm>
         </form>
