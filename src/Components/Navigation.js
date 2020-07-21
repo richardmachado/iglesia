@@ -31,7 +31,7 @@ class Header extends Component {
         });
     }
     render() {
-        const { navCollapsed } = this.state
+       
         return (
             <div>
                 <Navbar color="light" light expand="md">

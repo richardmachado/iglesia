@@ -47,7 +47,7 @@ function OldTestament () {
         .catch(err => {
           console.log(err);
         });
-    },[chapter, book]);
+    },[chapter, book, options]);
     if (!forms) {
       return <h1>Loading...</h1>;
     }
