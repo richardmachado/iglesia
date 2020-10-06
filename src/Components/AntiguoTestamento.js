@@ -2,6 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import styled from 'styled-components';
 
+import ClipLoader from "react-spinners/ClipLoader";
+import { css } from "@emotion/core";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 
 const Chapter = styled.div `
 width: 80%;
@@ -50,7 +58,14 @@ function Antiguo() {
         });
     }, [chapter, book]);
     if (!forms) {
-      return <h1>Loading...</h1>;
+      return  <div className="sweet-loading">
+    <ClipLoader
+      css={override}
+      size={150}
+      color={"#123abc"}
+     
+        />Loading...
+         </div>;
     }
   
     return (
@@ -269,19 +284,12 @@ function Antiguo() {
         {forms.map(chapterinfo => {
          
          return <Chapter>
-          
-             <br></br>
-             {processData().map((data2) => (
-               <>
-                 <p>{stripHTML(data2)}</p>
-                 <br></br>
-              
-               
-                 </>
-             ))}
-         </Chapter>
-       })} 
-      </div>
+         <br></br>
+          <p>{stripHTML(chapterinfo.content)}</p>
+        
+    </Chapter>
+  })}
+</div>  
     
     );
   }
