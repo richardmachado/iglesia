@@ -27,7 +27,7 @@ function Temas(props) {
         console.log(err);
       });
   }, []);
-  if (neon) {
+  if (!neon) {
     return  <div className="sweet-loading">
     <ClipLoader
       css={override}
