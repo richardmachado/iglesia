@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import styled from 'styled-components';
+import * as ReactBootStrap from 'react-bootstrap';
 
 const Chapter = styled.div `
 width: 80%;
@@ -13,7 +14,8 @@ background-color: #f2eecb;
 function NewTestament () {
     const [forms, setForms] = useState([]);
     const [chapter, setChapter] = useState(1);
-    const [book, setBook]= useState("MATTHEW")
+    const [book, setBook] = useState("MATTHEW");
+    const [isLoading, setLoading] = useState(false);
 
     const handleChange = event => {
       setChapter(event.target.value);
@@ -32,21 +34,21 @@ function NewTestament () {
     function processData() {
       return forms[0].Output.split(/\s+(?=\d)/g);
     }
-    
-
-    useEffect(() => {
+  useEffect(() => {
+    setLoading(true);
       
     axios.get(`https://ajith-holy-bible.p.rapidapi.com/GetVerseOfaChapter?&Book=${book}&chapter=${chapter}`, options)
           .then(response => {
-          setForms([response.data]);
+            setForms([response.data]);
+
         })
         .catch(err => {
           console.log(err);
         });
-    },[chapter, book, options]);
-    if (!forms) {
-      return <h1>Loading...</h1>;
-    }
+    },[chapter, book]);
+    // if (!forms) {
+    //   return <h1>Loading...</h1>;
+    // }
   
     return (
       <div className="forms">
@@ -127,7 +129,7 @@ function NewTestament () {
            
         </select>
       </label>
-   
+      {isLoading ? (!forms) : (<ReactBootStrap.Spinner animation="border" />)}
        {forms.map(chapterinfo => {
          
          return <Chapter>
@@ -139,10 +141,11 @@ function NewTestament () {
                  </>
              ))}
          </Chapter>
+
        })} 
-      </div>
-    
-    );
+      </div>    
+  );
+  
   }
   
   export default NewTestament;
