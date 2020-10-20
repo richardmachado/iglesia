@@ -37,7 +37,7 @@ function AddTemas (props) {
       
         <form onSubmit={handleSubmit(onSubmit)}>
       <StyledForm>
-        <label for="title"> </label>
+        <label htmlFor="title"> </label>
           <Inputs 
             type="text"  
             placeholder="Título" 
@@ -70,7 +70,7 @@ function AddTemas (props) {
         }}
       ></span>
 
-          <label for="feedback"></label>
+          <label htmlFor="feedback"></label>
           <textarea
         
             type="text" 
@@ -102,7 +102,7 @@ function AddTemas (props) {
             : "none"
         }}
       ></span>
-       <label for="feedback"></label>
+       <label htmlFor="feedback"></label>
           <textarea
         
             type="text" 
@@ -112,7 +112,7 @@ function AddTemas (props) {
             
             ref={register({required: false, minLength: 1, maxLength: 10024})} 
           />
-           <label for="feedback"></label>
+           <label htmlFor="feedback"></label>
           <textarea
         
             type="text" 

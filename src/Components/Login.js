@@ -12,15 +12,12 @@ import {  Login,
           Inputs  
 } from "../styles2/LoginStyles";
 
-
 export default function LoginForm(props) {
   const { register, handleSubmit, errors } = useForm();
-  const [loading, setLoading] = useState(false);
-
+  const [isLoading, setLoading] = useState(false);
 
   const onSubmit = data => {
-
-
+    setLoading(true)
     axiosWithAuth()
       .post("https://iglesia-backend.herokuapp.com/api/auth/login", data)
 
@@ -28,6 +25,7 @@ export default function LoginForm(props) {
         
         localStorage.setItem("token", res.data.token);
         props.history.push("/addtemas");
+        
       })
       .catch(err => {
         alert((err.message = "Invalid Username or Password"));
@@ -93,9 +91,16 @@ return (
         </Formgroup>
 
         <div className='footer'>
-          <Button>
-     
-            Submit</Button>
+        <Button>
+          {!isLoading && <Button>Login</Button>}
+   
+            {isLoading && (
+              <Button>
+                <i className="fas fa-spinner fa-spin" disabled={isLoading}>Logging in..</i>
+                </Button>
+            
+            )}
+          </Button>
         </div>
 
       </Styledform>
