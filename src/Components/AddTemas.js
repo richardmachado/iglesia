@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import {  useForm} from "react-hook-form";
 
@@ -6,26 +6,23 @@ import {
   Login, 
   Container, 
   StyledForm, 
-  Inputs 
-} from "../styles2/FeedbackStyles.js"
+  Inputs,
+  Button
+} from "../styles2/TemasStyles.js"
 
 function AddTemas (props) {
-  
     const { register, handleSubmit, errors } = useForm();
-  
+    const [isLoading, setLoading] = useState(false);
   
     const onSubmit = data => {
-     
-  
+      setLoading(true);
       axios
         .post("https://iglesia-backend.herokuapp.com/api/feedback", data)
-  
         .then(res => {
-
-       props.history.push("/temas")
+          props.history.push("/temas")
         })
         .catch(err => {
-          alert((err.message = "Feedback failed"));
+          alert((err.message = "Tema failed"));
           console.log(err.response);
         });
     };
@@ -34,7 +31,6 @@ function AddTemas (props) {
     return (
         <Container>
         <Login>Añadir un Tema</Login>
-      
         <form onSubmit={handleSubmit(onSubmit)}>
       <StyledForm>
         <label htmlFor="title"> </label>
@@ -43,12 +39,10 @@ function AddTemas (props) {
             placeholder="Título" 
             id="title"
             name="title" 
-          
             aria-invalid={errors.title ? 'true' : 'false'}
             aria-describedby="error-title-required error-title-maxLength"
             ref={register({required: true, minLength: 1, maxLength: 128})} 
           />
-
           <span
         role="alert"
         id="error-name-required"
@@ -121,8 +115,19 @@ function AddTemas (props) {
             name="body3" 
             ref={register({required: false, minLength: 1, maxLength: 10024})} 
            
-          />
-       <Inputs type="submit" />
+            />
+        <div className='footer'>
+        <Button>
+          {!isLoading && <Button>Add Tema</Button>}
+   
+            {isLoading && (
+              <Button>
+                <i className="fas fa-spinner fa-spin" disabled={isLoading}>Adding Tema</i>
+                </Button>
+            )}
+          </Button>
+        </div>
+            
        </StyledForm>
         </form>
         </Container>
