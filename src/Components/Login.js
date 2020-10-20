@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {  useForm} from "react-hook-form";
 import {  axiosWithAuth}  from "../utils/axiosWithAuth"
 
@@ -15,10 +15,11 @@ import {  Login,
 
 export default function LoginForm(props) {
   const { register, handleSubmit, errors } = useForm();
+  const [loading, setLoading] = useState(false);
 
 
   const onSubmit = data => {
-   
+
 
     axiosWithAuth()
       .post("https://iglesia-backend.herokuapp.com/api/auth/login", data)
@@ -39,7 +40,7 @@ return (
   <Container>
     <Login>Login</Login>
     <Body>
-      Enter your username and password. Do not share your password 
+      Enter your username and password.
     </Body>
     <form onSubmit={handleSubmit(onSubmit)}>
       <Styledform>
@@ -92,7 +93,9 @@ return (
         </Formgroup>
 
         <div className='footer'>
-          <Button>Submit</Button>
+          <Button>
+     
+            Submit</Button>
         </div>
 
       </Styledform>
