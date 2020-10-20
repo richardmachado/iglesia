@@ -14,15 +14,13 @@ const override = css`
 
 
 function Temas(props) {
-  
     const [neon, setNeo] = useState([]);
     const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     axios
-        .get("https://iglesia-backend.herokuapp.com/api/feedback")
+      .get("https://iglesia-backend.herokuapp.com/api/feedback")
       .then(response => {
-
         setNeo(response.data);
         setLoading(true)
       })
@@ -36,12 +34,10 @@ function Temas(props) {
       css={override}
       size={150}
       color={"#123abc"}
-     
         />Loading...
          </div>;
   }
 
-  
   return (
     <div className="body">
     <div className="container">
@@ -53,15 +49,12 @@ function Temas(props) {
                     <p>{biblename.body1}</p>
                     <p>{biblename.body2}</p>
                     <p>{biblename.body3}</p>
-                  </div>
-                   
+                  </div>   
               )
               })}
         {loading ? (!neon):(<ReactBootStrap.Spinner animation="border" />)}
- 
       </div>
     </div>
-    
   );
 }
 

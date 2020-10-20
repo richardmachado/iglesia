@@ -20,20 +20,15 @@ export default function LoginForm(props) {
     setLoading(true)
     axiosWithAuth()
       .post("https://iglesia-backend.herokuapp.com/api/auth/login", data)
-
       .then(res => {
-        
         localStorage.setItem("token", res.data.token);
         props.history.push("/addtemas");
-        
       })
       .catch(err => {
         alert((err.message = "Invalid Username or Password"));
         console.log(err.response);
       });
   };
-
-
 return (
   <Container>
     <Login>Login</Login>
@@ -98,11 +93,9 @@ return (
               <Button>
                 <i className="fas fa-spinner fa-spin" disabled={isLoading}>Logging in..</i>
                 </Button>
-            
             )}
           </Button>
         </div>
-
       </Styledform>
     </form>
   </Container>
