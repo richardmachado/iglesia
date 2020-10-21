@@ -16,6 +16,7 @@ export default function LoginForm(props) {
   const { register, handleSubmit, errors } = useForm();
   const [isLoading, setLoading] = useState(false);
 
+  
   const onSubmit = data => {
     setLoading(true)
     axiosWithAuth()
@@ -23,12 +24,22 @@ export default function LoginForm(props) {
       .then(res => {
         localStorage.setItem("token", res.data.token);
         props.history.push("/addtemas");
+        console.log(res)
       })
-      .catch(err => {
-        alert((err.message = "Invalid Username or Password"));
-        console.log(err.response);
-      });
+      .catch(handleErrors);
+      
   };
+  function handleErrors(err) {
+    if (err.response) {
+      alert('There was a problem', err.response.status)
+      return(<h1>'There was a problem', {err.response.status}</h1>)
+    } else if(err.request) {
+      console.log('There was a big problem with the request')
+    } else {
+      console.log("error", err.message)
+    }
+  }
+  
 return (
   <Container>
     <Login>Login</Login>
@@ -46,17 +57,17 @@ return (
               type='text'
               name='username'
               placeholder='username'
-              ref={register({ required: true, minLength: 6, maxLength: 15 })}
+              ref={register({ required: true, minLength: 7, maxLength: 7 })}
             />
           </Labels>
           {errors.username && errors.username.type === "required" && (
-            <span>Please enter a username</span>
+            <h2 style={{color: 'red', marginBottom:'30px' }}>Please enter a username</h2>
           )}
           {errors.username && errors.username.type === "minLength" && (
-            <span>Username is too short</span>
+            <h2 style={{color: 'red', marginBottom:'30px'}}>Username is too short</h2>
           )}
           {errors.username && errors.username.type === "maxLength" && (
-            <span>Username is too long</span>
+            <h2 style={{color: 'red', marginBottom:'30px' }}>Username is too long</h2>
           )}
 
           {/* End of UserName Field */}
@@ -73,31 +84,34 @@ return (
             type='password'
             placeholder='Password'
             name='password'
-            ref={register({ required: true, minLength: 4 })}
+            ref={register({ required: true, minLength: 7 })}
           />
-
           {errors.password && errors.password.type === "required" && (
-            <span>Password is required</span>
+            <h3 style={{color: 'red', marginBottom:'30px' }}>Password is required</h3>
           )}
           {errors.password && errors.password.type === "minLength" && (
-            <span>Password is too short - 4 characters</span>
+            <h3 style={{color: 'red', marginBottom:'30px' }}>Password is too short - 7 characters</h3>
           )}
           {/* End of password field  */}
         </Formgroup>
 
         <div className='footer'>
-        <Button>
+       
           {!isLoading && <Button>Login</Button>}
    
             {isLoading && (
               <Button>
-                <i className="fas fa-spinner fa-spin" disabled={isLoading}>Logging in..</i>
-                </Button>
-            )}
-          </Button>
+                <i className="fas fa-spinner fa-spin" disabled={isLoading}>Logging in..
+                </i>
+              </Button>
+          )}
+
+        
         </div>
       </Styledform>
     </form>
+
+    
   </Container>
 );
 }

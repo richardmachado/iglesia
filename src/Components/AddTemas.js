@@ -117,7 +117,7 @@ function AddTemas (props) {
            
             />
         <div className='footer'>
-        <Button>
+
           {!isLoading && <Button>Add Tema</Button>}
    
             {isLoading && (
@@ -125,7 +125,7 @@ function AddTemas (props) {
                 <i className="fas fa-spinner fa-spin" disabled={isLoading}>Adding Tema</i>
                 </Button>
             )}
-          </Button>
+
         </div>
             
        </StyledForm>
