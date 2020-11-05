@@ -53,13 +53,15 @@ function Antiguo() {
     return (
       <div className="forms">
         <Header>Antiguo Testamento</Header>
+        <PullDownText>
+        
+        </PullDownText>
         <PullDownText htmlFor="chapter">
           <select
             name="chapter"
             type="text"
             onChange={event => handleChange(event)}
             form="chapter">
-             Seleccione un libro
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

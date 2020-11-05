@@ -28,7 +28,6 @@ function Nuevo() {
     },
   }
   
-  
   useEffect(() => {
       
     axios.get(`https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/chapters/${book}.${chapter}`, options)
