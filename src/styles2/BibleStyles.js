@@ -14,3 +14,8 @@ font-size:2rem;
 padding-bottom:2rem;
 padding-top:2rem;
 `
+
+export const PullDownText = styled.label`
+font-family: Day Roman Regular;
+font-size:2rem;
+`

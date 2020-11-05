@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { Chapter, Header } from '../styles2/BibleStyles';
+import { Chapter, Header, PullDownText } from '../styles2/BibleStyles';
 import * as ReactBootStrap from 'react-bootstrap';
 import { libros_de_biblia } from "./BibleBooks/librosantiguos";
 const API_KEY = process.env.REACT_APP_SPANISH;
@@ -53,14 +53,13 @@ function Antiguo() {
     return (
       <div className="forms">
         <Header>Antiguo Testamento</Header>
-
-        <label htmlFor="chapter">
+        <PullDownText htmlFor="chapter">
           <select
             name="chapter"
             type="text"
             onChange={event => handleChange(event)}
             form="chapter">
-            
+             Seleccione un libro
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -212,16 +211,17 @@ function Antiguo() {
             <option value="149">149</option>
             <option value="150">150</option>
           </select>
-        </label>
-        <label htmlFor="book">
-          Seleccione un libro
+        </PullDownText>
+  
+        <PullDownText htmlFor="book">
+          capitulo de
          <select name="book"
             onChange={e => handleSubmit(e)}
             form="book">
               {libros_de_biblia.map(({ value, label }) => <option value={value} >{label}</option>)}
   
           </select>
-        </label>
+        </PullDownText>
         {forms.map(chapterinfo => {
           return <Chapter>
             <br></br>
@@ -232,6 +232,5 @@ function Antiguo() {
       </div>
     );
   }}
-
   
   export default Antiguo
