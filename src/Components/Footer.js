@@ -9,7 +9,7 @@ const Footer = () => {
           <MDBCol md="6">
             <h5 className="title">Mas Informacion</h5>
             <p>
-             Para mas informacion: <a href="mailto:anselmo316@yahoo.com">anselmo316@yahoo.com</a> O Telefono: <a href="tel:209-828-1381">209-829-1381</a>
+             Para mas informacion: <a href="mailto:anselmo316@yahoo.com">anselmo316@yahoo.com</a> O Telefono: <a href="tel:209-828-1381">209-828-1381</a>
             </p>
           </MDBCol>
           <MDBCol md="6">
