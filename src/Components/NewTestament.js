@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import styled from 'styled-components';
 import * as ReactBootStrap from 'react-bootstrap';
+const API_KEY = process.env.REACT_APP_ENGLISH;
 
 const Chapter = styled.div `
 width: 80%;
@@ -26,7 +27,7 @@ function NewTestament () {
     };
     const options = {
         headers: {
-            "x-rapidapi-key": "4ff44bf1d0mshb58109f3c94d09ep13f9adjsn37028a25638a",
+            "x-rapidapi-key": API_KEY,
             "x-rapidapi-host" : "ajith-holy-bible.p.rapidapi.com",
             "useQueryString" : "true"
           },   

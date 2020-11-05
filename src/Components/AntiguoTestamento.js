@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import * as ReactBootStrap from 'react-bootstrap';
 import { libros_de_biblia } from "./BibleBooks/librosantiguos";
+const API_KEY = process.env.REACT_APP_SPANISH
 
 const Chapter = styled.div `
 width: 80%;
@@ -27,7 +28,7 @@ function Antiguo() {
     };
     const options = {
       headers: {
-        "Api-key": "59fc91093130021fbd5e3439e270c4b2",
+        "Api-key": API_KEY,
       },
     }
   

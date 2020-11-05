@@ -3,6 +3,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { libros_de_biblia } from "./BibleBooks/librosnuevos";
 
+const API_KEY = process.env.REACT_APP_SPANISH
+
 const Chapter = styled.div `
 width: 80%;
 margin-left: 4rem;
@@ -11,11 +13,13 @@ text-align: left;
 background-color: #f2eecb; 
 `
 
+
 function Nuevo() {
     const [forms, setForms] = useState([]);
     const [chapter, setChapter] = useState(1);
     const [book, setBook] = useState("MAT"); 
-    
+ 
+  
   function stripHTML(text) {
     return text.replace(/<.*?>/gm, ' ');
   }
@@ -30,7 +34,7 @@ function Nuevo() {
     };
     const options = {
       headers: {
-        "Api-key": "59fc91093130021fbd5e3439e270c4b2",
+        "Api-key": API_KEY
       
       },
     }
