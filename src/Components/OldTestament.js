@@ -56,9 +56,6 @@ function OldTestament () {
       <div className="forms">
   <h1>Old Testament</h1>
 
-  <h1>  Book of {book} <br></br>Chapter : {chapter}</h1>
-
-
   <label  htmlFor="chapter">
           Select a chapter number
         <select

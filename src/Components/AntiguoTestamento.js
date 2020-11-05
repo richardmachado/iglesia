@@ -59,7 +59,7 @@ function Antiguo() {
     return (
       <div className="forms">
         <h1>Antiguo Testamento</h1>
-        <h1>  Libro de: {book} <br></br>Capítulo: {chapter}</h1>
+
         <label htmlFor="chapter">
           <select
             name="chapter"
@@ -224,7 +224,7 @@ function Antiguo() {
          <select name="book"
             onChange={e => handleSubmit(e)}
             form="book">
-              {libros_de_biblia.map(({ value, label }, index) => <option value={value} >{label}</option>)}
+              {libros_de_biblia.map(({ value, label }) => <option value={value} >{label}</option>)}
   
           </select>
         </label>

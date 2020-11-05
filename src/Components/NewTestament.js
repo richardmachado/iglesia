@@ -53,10 +53,6 @@ function NewTestament () {
     return (
       <div className="forms">
   <h1>New Testament </h1>
-
-  <h1>  Book of {book} <br></br>Chapter : {chapter}</h1>
-
-
   <label  htmlFor="chapter">
           Select a chapter number
         <select
