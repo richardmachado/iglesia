@@ -1,18 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import styled from 'styled-components';
 import { libros_de_biblia } from "./BibleBooks/librosnuevos";
+import { Chapter, Header } from '../styles2/BibleStyles';
 
 const API_KEY = process.env.REACT_APP_SPANISH
-
-const Chapter = styled.div `
-width: 80%;
-margin-left: 4rem;
-font-weight: bold;
-text-align: left; 
-background-color: #f2eecb; 
-`
-
 
 function Nuevo() {
     const [forms, setForms] = useState([]);
@@ -24,7 +15,6 @@ function Nuevo() {
     return text.replace(/<.*?>/gm, ' ');
   }
  
-
     const handleChange = event => {
       setChapter(event.target.value);
     };
@@ -35,12 +25,10 @@ function Nuevo() {
     const options = {
       headers: {
         "Api-key": API_KEY
-      
       },
     }
   
-    
-
+  
     useEffect(() => {
       
       axios.get(`https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/chapters/${book}.${chapter}`, options)
@@ -58,7 +46,7 @@ function Nuevo() {
   
     return (
       <div className="forms">
-        <h1>Nuevo Testamento</h1>
+        <Header>Nuevo Testamento</Header>
 
         <label  htmlFor="chapter">
           Select a chapter number

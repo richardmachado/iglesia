@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import styled from 'styled-components';
+import { Chapter, Header } from '../styles2/BibleStyles';
 import * as ReactBootStrap from 'react-bootstrap';
 import { libros_de_biblia } from "./BibleBooks/librosantiguos";
-const API_KEY = process.env.REACT_APP_SPANISH
+const API_KEY = process.env.REACT_APP_SPANISH;
 
-const Chapter = styled.div `
-width: 80%;
-margin-left: 4rem;
-font-weight: bold;
-text-align: left; 
-background-color: #f2eecb; 
-`
 
 function Antiguo() {
   const [forms, setForms] = useState([]);
@@ -59,7 +52,7 @@ function Antiguo() {
   } else {
     return (
       <div className="forms">
-        <h1>Antiguo Testamento</h1>
+        <Header>Antiguo Testamento</Header>
 
         <label htmlFor="chapter">
           <select

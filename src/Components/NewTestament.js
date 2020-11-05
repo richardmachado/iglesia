@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import styled from 'styled-components';
+import { Chapter, Header } from '../styles2/BibleStyles';
 import * as ReactBootStrap from 'react-bootstrap';
 const API_KEY = process.env.REACT_APP_ENGLISH;
-
-const Chapter = styled.div `
-width: 80%;
-margin-left: 4rem;
-font-weight: bold;
-text-align: left; 
-background-color: #f2eecb; 
-`
 
 function NewTestament () {
     const [forms, setForms] = useState([]);
@@ -53,7 +45,7 @@ function NewTestament () {
   
     return (
       <div className="forms">
-  <h1>New Testament </h1>
+  <Header>New Testament </Header>
   <label  htmlFor="chapter">
           Select a chapter number
         <select
