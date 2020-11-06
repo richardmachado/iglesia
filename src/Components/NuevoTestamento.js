@@ -3,6 +3,7 @@ import axios from 'axios';
 import { libros_de_biblia } from "./BibleBooks/librosnuevos";
 import { Chapter, Header, PullDownText } from '../styles2/BibleStyles';
 import * as ReactBootStrap from 'react-bootstrap';
+
 const API_KEY = process.env.REACT_APP_SPANISH
 
 function Nuevo() {
@@ -47,13 +48,12 @@ function Nuevo() {
       <div className="forms">
         <Header>Nuevo Testamento</Header>
         <PullDownText htmlFor="chapter">
-
         <select
             name="chapter"
             type="text"
             onChange={event => handleChange(event)}
             form="chapter">
-            <option value="1">1</option>
+<option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
@@ -89,7 +89,6 @@ function Nuevo() {
             onChange={e => handleSubmit(e)}
             form="book">
             {libros_de_biblia.map(({ value, label }) => <option value={value} >{label}</option>)}
-  
           </select>
         </PullDownText>
    

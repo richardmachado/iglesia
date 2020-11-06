@@ -25,5 +25,5 @@ export const libros_de_biblia =[
     { value:"2JN", label: "2 Juan"},
     { value:"3JN", label: "3 Juan"},
     { value:"JUD", label: "Judas"},
-        { value:"REV", label: "Apocalipsis"},
+    { value:"REV", label: "Apocalipsis"},
     ]

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { bible_books_newbooks } from "./BibleBooks/bible_books_newbooks";
-import { Chapter, Header } from '../styles2/BibleStyles';
+import { Chapter, Header, PullDownText } from '../styles2/BibleStyles';
 import * as ReactBootStrap from 'react-bootstrap';
 const API_KEY = process.env.REACT_APP_ENGLISH;
 
@@ -47,8 +47,8 @@ function NewTestament () {
     return (
       <div className="forms">
   <Header>New Testament </Header>
-  <label  htmlFor="chapter">
-          Select a chapter number
+  <PullDownText  htmlFor="chapter">
+
         <select
             name="chapter"
             type="text" 
@@ -83,17 +83,17 @@ function NewTestament () {
             <option value="27">27</option> 
             <option value="28">28</option> 
         </select>
-      </label>
+      </PullDownText>
 
-  <label htmlFor="book">
-         Select a book
+  <PullDownText htmlFor="book">
+        Chapter of
          <select name="book"
             onChange={e => handleSubmit(e)}
             form="book">
               {bible_books_newbooks.map(({ value, label }) => <option value={value} >{label}</option>)}
   
           </select>
-      </label>
+      </PullDownText>
       {isLoading ? (!forms) : (<ReactBootStrap.Spinner animation="border" />)}
        {forms.map(chapterinfo => {
          

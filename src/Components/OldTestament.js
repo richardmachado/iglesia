@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { oldtestamentbooks} from "./BibleBooks/bible_books_oldtestament";
-import { Chapter, Header } from '../styles2/BibleStyles';
+import { Chapter, Header, PullDownText } from '../styles2/BibleStyles';
 const API_KEY = process.env.REACT_APP_ENGLISH;
 
 
@@ -50,8 +50,8 @@ function OldTestament () {
       <div className="forms">
         <Header>Old Testament</Header>
 
-  <label  htmlFor="chapter">
-          Select a chapter number
+  <PullDownText  htmlFor="chapter">
+
         <select
             name="chapter"
             type="text" 
@@ -208,17 +208,17 @@ function OldTestament () {
             <option value="149">149</option> 
             <option value="150">150</option>  
         </select>
-      </label>
+      </PullDownText>
 
-  <label htmlFor="book">
-         Select a book
+  <PullDownText htmlFor="book">
+         Chapter of 
          <select name="book"
             onChange={e => handleSubmit(e)}
             form="book">
               {oldtestamentbooks.map(({ value, label }) => <option value={value} >{label}</option>)}
   
           </select>
-      </label>
+      </PullDownText>
    
        {forms.map(chapterinfo => {
          
