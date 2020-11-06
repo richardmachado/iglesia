@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import { oldtestamentbooks} from "./BibleBooks/bible_books_oldtestament";
 import { Chapter, Header } from '../styles2/BibleStyles';
 const API_KEY = process.env.REACT_APP_ENGLISH;
 
@@ -8,9 +9,8 @@ const API_KEY = process.env.REACT_APP_ENGLISH;
 function OldTestament () {
     const [forms, setForms] = useState([]);
     const [chapter, setChapter] = useState(1);
-  const [book, setBook] = useState("GENESIS");
+    const [book, setBook] = useState("GENESIS");
   
-
     const handleChange = event => {
       setChapter(event.target.value);
      
@@ -19,7 +19,6 @@ function OldTestament () {
     const handleSubmit = e => {
       setBook(e.target.value);
     };
-  
   
     const options = {
         headers: {
@@ -213,49 +212,12 @@ function OldTestament () {
 
   <label htmlFor="book">
          Select a book
-         <select name="book" 
-          onChange={event => handleSubmit(event)}
-          form="book">
-            <option value="GENESIS">Genesis</option>  
-            <option value="EXODUS">Exodus</option>
-            <option value="LEVITICUS">Leviticus</option>
-            <option value="NUMBERS">Numbers</option>
-            <option value="Deuteronomy">Deuteronomy</option>
-            <option value="Joshua">Joshua</option>
-            <option value="Judges">Judges</option>
-            <option value="Ruth">Ruth</option>
-            <option value="1 Samuel">1 Samuel (1 Kings)</option>
-            <option value="2 Samuel">2 Samuel (2 Kings)</option>
-            <option value="1 Kings">1 Kings (3 Kings)</option>
-            <option value="2 Kings">2 Kings (4 Kings)</option>
-            <option value="1 Chronicles">1 Chronicles</option>
-            <option value="2 Chronicles">2 Chronicles</option>
-            <option value="Ezra">Ezra</option>
-            <option value="Nehemiah">Nehemiah</option>
-            <option value="Esther">Esther</option>
-            <option value="Job">Job</option>
-            <option value="Psalms">Psalms</option>
-            <option value="Proverbs">Proverbs</option>
-            <option value="Ecclesiastes">Ecclesiastes</option>
-            <option value="Song of Solomon">Song of Solomon</option>
-            <option value="Isaiah">Isaiah</option>
-            <option value="Jeremiah">Jeremiah</option>
-            <option value="Lamentations">Lamentations</option>
-            <option value="Ezekiel">Ezekiel</option>
-            <option value="Daniel">Daniel</option>
-            <option value="Hoseas">Hoseas</option>
-            <option value="Joel">Joel</option>
-            <option value="Amos">Amos</option>
-            <option value="Obadiah">Obadiah</option>
-            <option value="Jonah">Jonah</option>
-            <option value="Micah">Micah</option>
-            <option value="Nahum">Nahum</option>
-            <option value="Habakkuk">Habakkuk</option>
-            <option value="Zephaniah">Zephaniah</option>
-            <option value="Haggai">Haggai</option>
-            <option value="Zechariah">Zechariah</option>
-            <option value="Malachi">Malachi</option>
-        </select>
+         <select name="book"
+            onChange={e => handleSubmit(e)}
+            form="book">
+              {oldtestamentbooks.map(({ value, label }) => <option value={value} >{label}</option>)}
+  
+          </select>
       </label>
    
        {forms.map(chapterinfo => {

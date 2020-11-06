@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import { bible_books_newbooks } from "./BibleBooks/bible_books_newbooks";
 import { Chapter, Header } from '../styles2/BibleStyles';
 import * as ReactBootStrap from 'react-bootstrap';
 const API_KEY = process.env.REACT_APP_ENGLISH;
@@ -86,37 +87,12 @@ function NewTestament () {
 
   <label htmlFor="book">
          Select a book
-         <select name="book" 
-          onChange={e => handleSubmit(e)}
-          form="book">
-            <option value="Matthew">Matthew</option>  
-            <option value="Mark">Mark</option>
-            <option value="Luke">Luke</option>
-            <option value="John">John</option>
-            <option value="Acts">Acts</option>
-            <option value="Romans">Romans</option>
-            <option value="1 Corinthians">1 Corinthians</option>
-            <option value="2 Corinthians">2 Corinthians</option>
-            <option value="Galatians">Galatians</option>
-            <option value="Ephesians">Ephesians</option>
-            <option value="Philippians">Philippians</option>
-            <option value="Colossians">Colossians</option>
-            <option value="1 Thessalonians">1 Thessalonians</option>
-            <option value="2 Thessalonians">2 Thessalonians</option>
-            <option value="1 Timothy">1 Timothy</option>
-            <option value="2 Timothy">2 Timothy</option>
-            <option value="Titus">Titus</option>
-            <option value="Philemon">Philemon</option>
-            <option value="Hebrews">Hebrews</option>
-            <option value="James">James</option>
-            <option value="2 Peter">2 Peter</option>
-            <option value="1 John">1 John</option>
-            <option value="2 John">2 John</option>
-            <option value="3 John">3 John</option>
-            <option value="Jude">Jude</option>
-            <option value="Revelation">Revelation</option>
-           
-        </select>
+         <select name="book"
+            onChange={e => handleSubmit(e)}
+            form="book">
+              {bible_books_newbooks.map(({ value, label }) => <option value={value} >{label}</option>)}
+  
+          </select>
       </label>
       {isLoading ? (!forms) : (<ReactBootStrap.Spinner animation="border" />)}
        {forms.map(chapterinfo => {
