@@ -1,6 +1,6 @@
 
 export const newtestamentbooks = [
-    {value: "Matthew", label: "Matthew", chapters:28},  
+    {value: "MATTHEW", label: "Matthew", chapters:28},  
     { value:"Mark", label: "Mark", chapters:16},
     { value:"Luke", label: "Luke", chapters:24},
     { value:"John", label: "John", chapters:21},

@@ -12,7 +12,7 @@ const API_KEY = process.env.REACT_APP_ENGLISH;
 function NewTestament () {
 	const [forms, setForms] = useState([]);
 	const [chapter, setChapter] = useState(1);
-	const [book, setBook] = useState('GENESIS');
+	const [book, setBook] = useState('MATTHEW');
 	const [numberChapters, setNumberChapters] = useState(
 		[]
 	);
