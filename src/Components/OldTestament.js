@@ -10,15 +10,6 @@ import {
 } from '../styles2/BibleStyles';
 const API_KEY = process.env.REACT_APP_ENGLISH;
 
-const renderKeys = () => {
-	var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-	return arr.map((val) => {
-		return <option>{val}</option>;
-	});
-};
-
-console.log(renderKeys);
-
 function OldTestament() {
 	const [forms, setForms] = useState([]);
 	const [chapter, setChapter] = useState(1);
@@ -55,7 +46,7 @@ function OldTestament() {
 				options
 			)
 			.then((response) => {
-				console.log(response.data);
+
 				setForms([response.data]);
 			})
 			.catch((err) => {
@@ -64,7 +55,7 @@ function OldTestament() {
 
 		oldtestamentbooks.map((item) => {
 			if (item.value === book) {
-				setNumberChapters(item.chapters);
+				return setNumberChapters(item.chapters);
 			}
 		});
 
