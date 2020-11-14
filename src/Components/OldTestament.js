@@ -10,9 +10,6 @@ import {
 } from '../styles2/BibleStyles';
 const API_KEY = process.env.REACT_APP_ENGLISH;
 
-// const arr = Array.apply(null, { length: oldtestamentbooks.chapters }).map(Number.call, Number);
-// console.log(arr)
-
 const renderKeys = () => {
 	var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 	return arr.map((val) => {
@@ -71,16 +68,10 @@ function OldTestament() {
 			}
 		});
 
-		// eslint-disable-next-line
 	}, [book, chapter]);
 	if (!forms) {
 		return <h1>Loading...</h1>;
 	}
-
-	// console.log(book);
-	// console.log('CURRENT CHAP: ', chapter);
-	// console.log('#chapters: ', numberChapters);
-
 	return (
 		<div className='forms'>
 			<Header>Old Testament</Header>
