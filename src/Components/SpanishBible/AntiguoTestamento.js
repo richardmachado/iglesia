@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import _ from 'lodash';
-import { Chapter, Header, PullDownText } from '../styles2/BibleStyles';
+import { Chapter, Header, PullDownText } from '../../styles2/BibleStyles';
 import * as ReactBootStrap from 'react-bootstrap';
-import { libros_de_biblia } from "./BibleBooks/librosantiguos";
+import { libros_de_biblia } from "../BibleBooks/librosantiguos";
 
 const API_KEY = process.env.REACT_APP_SPANISH;
 

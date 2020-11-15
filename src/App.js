@@ -6,15 +6,15 @@ import Navigation from './Components/Navigation';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
 
-import Antiguo from './Components/AntiguoTestamento';
-import Nuevo from './Components/NuevoTestamento';
+import Antiguo from './Components/SpanishBible/AntiguoTestamento';
+import Nuevo from './Components/SpanishBible/NuevoTestamento';
 
 import Temas from './Components/Temas';
 import AddTemas from './Components/AddTemas';
 
 import Login from './Components/Login';
-import OldTestament from './Components/OldTestament';
-import NewTestament from './Components/NewTestament';
+import OldTestament from './Components/EnglishBible/OldTestament';
+import NewTestament from './Components/EnglishBible/NewTestament';
 
 function App() {
   

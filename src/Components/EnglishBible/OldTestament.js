@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import _ from 'lodash';
-import { newtestamentbooks } from "./BibleBooks/bible_books_newbooks";
+import { oldtestamentbooks } from '../BibleBooks/bible_books_oldtestament';
+
 import {
-  Chapter,
-  Header,
-  PullDownText
-} from '../styles2/BibleStyles';
+	Chapter,
+	Header,
+	PullDownText,
+} from '../../styles2/BibleStyles';
 const API_KEY = process.env.REACT_APP_ENGLISH;
 
-function NewTestament () {
+function OldTestament() {
 	const [forms, setForms] = useState([]);
 	const [chapter, setChapter] = useState(1);
-	const [book, setBook] = useState('MATTHEW');
+	const [book, setBook] = useState('GENESIS');
 	const [numberChapters, setNumberChapters] = useState(
 		[]
 	);
@@ -52,7 +53,7 @@ function NewTestament () {
 				console.log(err);
 			});
 
-		newtestamentbooks.map((item) => {
+		oldtestamentbooks.map((item) => {
 			if (item.value === book) {
 				return setNumberChapters(item.chapters);
 			}
@@ -64,10 +65,9 @@ function NewTestament () {
 	}
 	return (
 		<div className='forms'>
-			<Header>New Testament</Header>
+			<Header>Old Testament</Header>
 
 			<PullDownText htmlFor='book'>
-
 				<select
 					name='book'
 					onChange={(e) => {
@@ -75,7 +75,7 @@ function NewTestament () {
 					}}
 					form='book'
 				>
-					{newtestamentbooks.map(
+					{oldtestamentbooks.map(
 						({ value, label }) => (
 							<option value={value}>
 								{label}
@@ -126,5 +126,5 @@ function NewTestament () {
 		</div>
 	);
 }
-  
-  export default NewTestament;
+
+export default OldTestament;
