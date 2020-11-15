@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import _ from 'lodash';
 import { libros_de_biblia } from "./BibleBooks/librosnuevos";
 import { Chapter, Header, PullDownText } from '../styles2/BibleStyles';
 import * as ReactBootStrap from 'react-bootstrap';
@@ -11,6 +12,9 @@ function Nuevo() {
   const [chapter, setChapter] = useState(1);
   const [book, setBook] = useState("MAT");
   const [isLoading, setLoading] = useState(false);
+  const [numberChapters, setNumberChapters] = useState(
+		[]
+  );
   
   function stripHTML(text) {
     return text.replace(/<.*?>/gm, ' ');
@@ -39,6 +43,11 @@ function Nuevo() {
       .catch(err => {
         console.log(err);
       });
+      libros_de_biblia.map((item) => {
+        if (item.value === book) {
+          return setNumberChapters(item.chapters);
+        }
+      });
   }, [chapter, book]);
   if (!forms) {
     return <h1>Loading...</h1>;
@@ -47,50 +56,41 @@ function Nuevo() {
     return (
       <div className="forms">
         <Header>Nuevo Testamento</Header>
-        <PullDownText htmlFor="chapter">
-        <select
-            name="chapter"
-            type="text"
-            onChange={event => handleChange(event)}
-            form="chapter">
-<option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-            <option value="25">25</option>
-            <option value="26">26</option>
-            <option value="27">27</option>
-            <option value="28">28</option>
-          </select>
-        </PullDownText>
         <PullDownText htmlFor="book">
-         capitulo de
+          Libro de
          <select name="book"
             onChange={e => handleSubmit(e)}
             form="book">
-            {libros_de_biblia.map(({ value, label }) => <option value={value} >{label}</option>)}
-          </select>
+              {libros_de_biblia.map(({ value, label }) => <option value={value} >{label}</option>)}
+  
+          </select> 
         </PullDownText>
+        <PullDownText>
+        <select
+					name='chapter'
+					type='text'
+					onChange={(event) =>
+						handleChange(event)
+					}
+					form='chapter'
+				>
+					{_.range(1, numberChapters + 1).map(
+						(value) => (
+							<option
+								key={value}
+								value={value}
+								onChange={(e) => {
+									setChapter(
+										e.target.value
+									);
+								}}
+							>
+								{value}
+							</option>
+						)
+					)}
+				</select>
+      </PullDownText>
    
         {forms.map(chapterinfo => {
          
