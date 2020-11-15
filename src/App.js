@@ -6,7 +6,6 @@ import Navigation from './Components/Navigation';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
 
-
 import Antiguo from './Components/AntiguoTestamento';
 import Nuevo from './Components/NuevoTestamento';
 
@@ -17,24 +16,19 @@ import Login from './Components/Login';
 import OldTestament from './Components/OldTestament';
 import NewTestament from './Components/NewTestament';
 
-
-
 function App() {
   
   return (
     <div className="App">
       <Navigation />
-      
       <Switch>
         <Route exact path ="/" component={Home} />
         <Route path="/oldtestament" component={OldTestament} />
         <Route path="/newtestament" component={NewTestament} />
 
-
-        <Route path="/antiguo" component={Antiguo} />
-        <Route path ="/nuevo" component={Nuevo} />
+        <Route path="/antiguotestamento" component={Antiguo} />
+        <Route path ="/nuevotestamento" component={Nuevo} />
       
-
         <Route path="/temas" component={Temas} />
         <Route path="/addtemas" component={AddTemas} />
         <Route path="/login" component={Login} />

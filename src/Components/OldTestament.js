@@ -68,7 +68,6 @@ function OldTestament() {
 			<Header>Old Testament</Header>
 
 			<PullDownText htmlFor='book'>
-				Book of
 				<select
 					name='book'
 					onChange={(e) => {

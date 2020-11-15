@@ -57,7 +57,7 @@ function Nuevo() {
       <div className="forms">
         <Header>Nuevo Testamento</Header>
         <PullDownText htmlFor="book">
-          Libro de
+        
          <select name="book"
             onChange={e => handleSubmit(e)}
             form="book">

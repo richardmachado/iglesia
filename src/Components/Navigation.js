@@ -58,10 +58,10 @@ class Header extends Component {
                 </DropdownToggle>
                                 <DropdownMenu right>
                                     <DropdownItem>
-                                    <NavLink href="/antiguo">Antiguo Testamento</NavLink>
+                                    <NavLink href="/antiguotestamento">Antiguo Testamento</NavLink>
                   </DropdownItem>
                                     <DropdownItem>
-                                    <NavLink href="/nuevo">Nuevo Testamento</NavLink>
+                                    <NavLink href="/nuevotestamento">Nuevo Testamento</NavLink>
                   </DropdownItem>
                                   
                                 </DropdownMenu>
