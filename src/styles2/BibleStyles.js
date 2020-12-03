@@ -3,11 +3,13 @@ import bible from "../styles2/unsplash-bible.jpg";
 
 export const Chapter = styled.div `
 width: 90%;
-margin-left: 4rem;
+margin-left: 2rem;
 font-weight: bold;
 text-align: left; 
 background:url(${bible});
-color:black 
+color:black;
+padding-left:1rem;
+padding-right:1rem;
 `
 
 export const Header = styled.div`
