@@ -52,13 +52,13 @@ function OldTestament() {
 			.catch((err) => {
 				console.log(err);
 			});
-
+// eslint-disable-next-line 
 		oldtestamentbooks.map((item) => {
 			if (item.value === book) {
 				return setNumberChapters(item.chapters);
 			}
 		});
-
+// eslint-disable-next-line 
 	}, [book, chapter]);
 	if (!forms) {
 		return <h1>Loading...</h1>;

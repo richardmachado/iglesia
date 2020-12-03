@@ -49,11 +49,13 @@ function Antiguo() {
         .catch(err => {
           console.log(err);
         });
+      // eslint-disable-next-line 
         libros_de_biblia.map((item) => {
           if (item.value === book) {
             return setNumberChapters(item.chapters);
           }
         });
+      // eslint-disable-next-line 
     }, [chapter, book]);
 
   if (!forms) {

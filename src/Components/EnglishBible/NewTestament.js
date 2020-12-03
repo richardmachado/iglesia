@@ -48,11 +48,13 @@ export default function NewTestament () {
 			.catch((err) => {
 				console.log(err);
 			});
+		// eslint-disable-next-line
 		newtestamentbooks.map((item) => {
 			if (item.value === book) {
 				return setNumberChapters(item.chapters);
 			}
 		});
+		// eslint-disable-next-line 
 	}, [book, chapter]);
 	if (!forms) {
 		return <h1>Loading...</h1>;
