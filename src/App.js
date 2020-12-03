@@ -33,7 +33,7 @@ function App() {
         <Route path="/addtemas" component={AddTemas} />
         <Route path="/login" component={Login} />
       </Switch>
-      <Footer />
+      <Footer/>
     </div>
   );
 }

@@ -1,5 +1,9 @@
+
 .App {
   text-align: center;
+  padding-bottom:190px;
+  position: relative;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -9,7 +13,8 @@
 }
 
 .home {
-  margin-top: 2rem
+  margin-top: 2rem;
+  height: 100%
 }
 
 
