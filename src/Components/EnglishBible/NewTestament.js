@@ -7,15 +7,14 @@ import {
   Header,
   PullDownText
 } from '../../styles2/BibleStyles';
+// import bible from "../../styles2/unsplash-bible.jpg"
 const API_KEY = process.env.REACT_APP_ENGLISH;
 
-function NewTestament () {
+export default function NewTestament () {
 	const [forms, setForms] = useState([]);
 	const [chapter, setChapter] = useState(1);
 	const [book, setBook] = useState('MATTHEW');
-	const [numberChapters, setNumberChapters] = useState(
-		[]
-	);
+	const [numberChapters, setNumberChapters] = useState([]);
 
 	const handleChange = (event) => {
 		setChapter(event.target.value);
@@ -37,7 +36,6 @@ function NewTestament () {
 	function processData() {
 		return forms[0].Output.split(/\s+(?=\d)/g);
 	}
-
 	useEffect(() => {
 		axios
 			.get(
@@ -45,19 +43,16 @@ function NewTestament () {
 				options
 			)
 			.then((response) => {
-
 				setForms([response.data]);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-
 		newtestamentbooks.map((item) => {
 			if (item.value === book) {
 				return setNumberChapters(item.chapters);
 			}
 		});
-
 	}, [book, chapter]);
 	if (!forms) {
 		return <h1>Loading...</h1>;
@@ -65,9 +60,7 @@ function NewTestament () {
 	return (
 		<div className='forms'>
 			<Header>New Testament</Header>
-
 			<PullDownText htmlFor='book'>
-
 				<select
 					name='book'
 					onChange={(e) => {
@@ -126,5 +119,3 @@ function NewTestament () {
 		</div>
 	);
 }
-  
-  export default NewTestament;
