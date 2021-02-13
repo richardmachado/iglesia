@@ -13,7 +13,7 @@ const override = css`
 `;
 
 
-function Temas(props) {
+function Temas(){
     const [neon, setNeo] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -45,12 +45,12 @@ function Temas(props) {
               {neon.map(biblename => {
                 return (
                   <div className="tema-box" key={biblename.id}>
-                    <h2>{biblename.title} </h2>
-                    <p>{biblename.body1}</p>
-                    <p>{biblename.body2}</p>
-                    <p>{biblename.body3}</p>
-                  </div>   
-              )
+                    <h2 className="temas-title">{biblename.title} </h2>
+                    <p className="temas-body">{biblename.body1}</p>
+                    <p className="temas-body">{biblename.body2}</p>
+                    <p className="temas-body">{biblename.body3}</p>
+                  </div>
+                );
               })}
         {loading ? (!neon):(<ReactBootStrap.Spinner animation="border" />)}
       </div>

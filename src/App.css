@@ -48,6 +48,14 @@
     outline: none;
     border: 1px solid #cdcdcd;
     border-color: rgba(0,0,0,.15);
-    background-color: white;
-    font-size: 16px;
+    background-color: rgb(202, 198, 236);
+   
+}
+
+.temas-title {
+  font-size: 40px;
+}
+
+.temas-body {
+  font-size: 25px;
 }
