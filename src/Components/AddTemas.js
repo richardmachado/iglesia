@@ -7,6 +7,7 @@ import {
   Container, 
   StyledForm, 
   Inputs,
+  Titulo,
   Button
 } from "../styles2/TemasStyles.js"
 
@@ -34,7 +35,7 @@ function AddTemas (props) {
         <form onSubmit={handleSubmit(onSubmit)}>
       <StyledForm>
         <label htmlFor="title"> </label>
-          <Inputs 
+          <Titulo 
             type="text"  
             placeholder="Título" 
             id="title"
@@ -65,7 +66,7 @@ function AddTemas (props) {
       ></span>
 
           <label htmlFor="feedback"></label>
-          <textarea
+          <Inputs 
         
             type="text" 
             placeholder="Primer párrafo"
@@ -97,7 +98,7 @@ function AddTemas (props) {
         }}
       ></span>
        <label htmlFor="feedback"></label>
-          <textarea
+          <Inputs
         
             type="text" 
             placeholder="Segundo párrafo" 
@@ -107,7 +108,7 @@ function AddTemas (props) {
             ref={register({required: false, minLength: 1, maxLength: 10024})} 
           />
            <label htmlFor="feedback"></label>
-          <textarea
+          <Inputs
         
             type="text" 
             placeholder="Tercer párrafo" 

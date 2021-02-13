@@ -7,7 +7,7 @@ import {
   Header,
   PullDownText
 } from '../../styles2/BibleStyles';
-// import bible from "../../styles2/unsplash-bible.jpg"
+
 const API_KEY = process.env.REACT_APP_ENGLISH;
 
 export default function NewTestament () {
