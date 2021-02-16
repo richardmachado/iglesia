@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
 export const StyledForm = styled.div`
@@ -59,7 +59,7 @@ mix-blend-mode: normal;
 
    export const Titulo = styled.input`
      margin-top: 1px;
-     min-width: 60em;
+     min-width: 30em;
      height: 37px;
      padding: 0px 10px;
      font-size: 18px;
@@ -72,31 +72,39 @@ mix-blend-mode: normal;
      :focus {
        background-color: lightblue;
      }
+     @media only screen and (max-width: 750px) {
+       min-width: 20rem;
+     }
    `;
  
 
- export const Inputs = styled.input`
-    margin-top: 1px;
-    min-width: 60em;  
-    padding: 0px 10px;
-    font-size: 18px;
-    font-family: "Open Sans", sans-serif;
-    background-color: #f3f3f3;
-    border: 0;
-    border-radius: 4px;
-    margin-bottom: 31px;
-    transition: all 250ms ease-in-out;
-    width: 100%;
-    height: 200px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: vertical;
+ export const Inputs = styled.textarea`
+   margin-top: 1px;
+   min-width: 40rem;
+   padding: 0px 10px;
+   font-size: 18px;
+   font-family: "Open Sans", sans-serif;
+   background-color: #f3f3f3;
+   border: 0;
+   border-radius: 4px;
+   margin-bottom: 31px;
+   transition: all 250ms ease-in-out;
+   width: 100%;
+   height: 200px;
+   padding: 12px 20px;
+   box-sizing: border-box;
+   border: 2px solid #ccc;
+   border-radius: 4px;
+   background-color: #f8f8f8;
+   resize: vertical;
 
    :focus {
      background-color: lightblue;
+   }
+
+   @media only screen and (max-width: 750px) {
+        min-width:20rem;
+    
    }
  `;
  

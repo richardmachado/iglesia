@@ -9,7 +9,7 @@ import {
   Inputs,
   Titulo,
   Button
-} from "../styles2/TemasStyles.js"
+} from "../styles2/AddTemasStyles.js"
 
 function AddTemas (props) {
     const { register, handleSubmit, errors } = useForm();
