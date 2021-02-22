@@ -11,6 +11,9 @@ import Nuevo from './Components/SpanishBible/NuevoTestamento';
 
 import Temas from './Components/Temas';
 import AddTemas from './Components/AddTemas';
+import DeleteTemas from './Components/DeleteTemas';
+import EditTemas from './Components/EditTemas';
+import EditandoTemas from './Components/EditandoTemas';
 
 import Login from './Components/Login';
 import OldTestament from './Components/EnglishBible/OldTestament';
@@ -22,18 +25,21 @@ function App() {
     <div className="App">
       <Navigation />
       <Switch>
-        <Route exact path ="/" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/oldtestament" component={OldTestament} />
         <Route path="/newtestament" component={NewTestament} />
 
         <Route path="/antiguotestamento" component={Antiguo} />
-        <Route path ="/nuevotestamento" component={Nuevo} />
-      
+        <Route path="/nuevotestamento" component={Nuevo} />
+
         <Route path="/temas" component={Temas} />
         <Route path="/addtemas" component={AddTemas} />
+        <Route path="/borrartemas" component={DeleteTemas} />
+        <Route path="/editartemas" component={EditTemas} />
         <Route path="/login" component={Login} />
+        <Route path="/editandotemas/:id" component={EditandoTemas} />
       </Switch>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

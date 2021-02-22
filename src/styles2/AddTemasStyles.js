@@ -10,7 +10,7 @@ export const StyledForm = styled.div`
   padding: 20px;
 `;
 
-export const Login = styled.div `
+export const Login = styled.button `
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
@@ -18,6 +18,9 @@ font-size: 24px;
 line-height: 28px;
 color: #5A4E4E;
 mix-blend-mode: normal;
+width: 10rem;
+height:100%;
+cursor:pointer
 `
   
   export const Container = styled.div `
@@ -51,7 +54,20 @@ mix-blend-mode: normal;
   &:focus {
     outline: none;
   `
-
+  export const HeaderButtons = styled.button`
+  font-size: 21px;
+  padding: 5px 20px;
+  border: 0;
+  background-color: #DADADA;
+  color: #fff;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  &:hover {
+    background-color: gold;
+  }
+  &:focus {
+    outline: none;
+  `;
 
  // turn into styled components and delete any duplicates
 
