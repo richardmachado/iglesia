@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-
 import axios from "axios";
 import { withRouter, Link } from "react-router-dom";
 
 import {
-
   Container,
   StyledForm,
   Inputs,
   Titulo,
-  Button
+  Button,
 } from "../styles2/AddTemasStyles.js";
 
 function EditandoTemas(props) {
   const [getVehicleDataById, setVehicleDataById] = useState([]);
-
   const [editVehicleDataById, latestEdit] = useState([]);
+  const [isLoading, setLoading] = useState(false);
+
   const { register, handleSubmit, errors } = useForm();
-    const [isLoading, setLoading] = useState(false);
-    
+
   const id = props.match.params.id;
 
   useEffect(() => {
@@ -28,7 +26,7 @@ function EditandoTemas(props) {
         const result = await axios.get(
           `https://ijsv-backend.herokuapp.com/api/temas/${id}`
         );
-        setVehicleDataById(result.data);
+        setVehicleDataById(result.data[0]);
         console.log("results.data", result.data);
       } catch (error) {
         console.log(error);
@@ -48,14 +46,13 @@ function EditandoTemas(props) {
     });
     latestEdit(latestData);
   };
-    const onSubmit = () => {
-      setLoading(true)
+  const onSubmit = () => {
+    setLoading(true);
     axios
       .put(
         `https://ijsv-backend.herokuapp.com/api/temas/${id}`,
         editVehicleDataById
       )
-
       .then((res) => {
         props.history.push("/temas");
         console.log("response", res);

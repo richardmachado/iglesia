@@ -17,17 +17,7 @@ const override = css`
 `;
 
 function DeleteTemas(props) {
-  const removeId = (id) => {
-    axios
-      .delete(`https://ijsv-backend.herokuapp.com/api/temas/${id}`)
-      .then((res) => {
-        props.history.push("/temas");
-      })
-      .catch((err) => {
-        alert((err.message = "Tema failed to delete"));
-        console.log(err.response);
-      });
-  };
+
   const [neon, setNeo] = useState([]);
   const [loading, setLoading] = useState(false);
 

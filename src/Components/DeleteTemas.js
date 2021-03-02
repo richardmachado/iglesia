@@ -74,12 +74,14 @@ function DeleteTemas(props) {
               <button
                 class="btn btn-danger"
                 onClick={() => {
-                  if (window.confirm("Are you sure to delete this record?")) {
+                  if (
+                    window.confirm("Está seguro que quiere borrar este tema?")
+                  ) {
                     removeId(biblename.id);
                   }
                 }}
               >
-                Delete
+                Borrar
               </button>
               <p className="temas-body">{biblename.body1}</p>
               <p className="temas-body">{biblename.body2}</p>
