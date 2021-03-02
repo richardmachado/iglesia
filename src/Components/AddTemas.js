@@ -23,7 +23,7 @@ function AddTemas (props) {
       axios
         .post("https://ijsv-backend.herokuapp.com/api/temas", data)
         .then((res) => {
-          props.history.push("/temas");
+          props.history.push("/editartemas");
         })
         .catch((err) => {
           alert((err.message = "Tema failed"));

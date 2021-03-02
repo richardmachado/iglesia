@@ -54,7 +54,7 @@ function EditandoTemas(props) {
         editVehicleDataById
       )
       .then((res) => {
-        props.history.push("/temas");
+        props.history.push("/editartemas");
         console.log("response", res);
       })
       .catch((err) => {
@@ -178,6 +178,7 @@ function EditandoTemas(props) {
                   </i>
                 </Button>
               )}
+              <p>Si nada cambio, usar el boton "cancel" arriba</p>
             </div>
           </StyledForm>
         </form>

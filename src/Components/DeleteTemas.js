@@ -19,7 +19,7 @@ function DeleteTemas(props) {
         axios
           .delete(`https://ijsv-backend.herokuapp.com/api/temas/${id}`)
           .then((res) => {
-            props.history.push("/temas");
+            window.location.reload();
           })
           .catch((err) => {
             alert((err.message = "Tema failed to delete"));
