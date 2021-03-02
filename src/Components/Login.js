@@ -20,11 +20,11 @@ export default function LoginForm(props) {
   const onSubmit = data => {
     setLoading(true)
     axiosWithAuth()
-      .post("https://iglesia-backend.herokuapp.com/api/auth/login", data)
-      .then(res => {
+      .post("https://ijsv-backend.herokuapp.com/api/auth/login", data)
+      .then((res) => {
         localStorage.setItem("token", res.data.token);
         props.history.push("/addtemas");
-        console.log(res)
+        console.log(res);
       })
       .catch(handleErrors);
       

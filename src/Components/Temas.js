@@ -19,12 +19,12 @@ function Temas(){
 
   useEffect(() => {
     axios
-      .get("https://iglesia-backend.herokuapp.com/api/feedback")
-      .then(response => {
+      .get("https://ijsv-backend.herokuapp.com/api/temas")
+      .then((response) => {
         setNeo(response.data);
-        setLoading(true)
+        setLoading(true);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }, []);

@@ -21,11 +21,11 @@ function AddTemas (props) {
     const onSubmit = data => {
       setLoading(true);
       axios
-        .post("https://iglesia-backend.herokuapp.com/api/feedback", data)
-        .then(res => {
-          props.history.push("/temas")
+        .post("https://ijsv-backend.herokuapp.com/api/temas", data)
+        .then((res) => {
+          props.history.push("/temas");
         })
-        .catch(err => {
+        .catch((err) => {
           alert((err.message = "Tema failed"));
           console.log(err.response);
         });

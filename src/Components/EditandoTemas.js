@@ -5,13 +5,12 @@ import axios from "axios";
 import { withRouter, Link } from "react-router-dom";
 
 import {
-  Login,
+
   Container,
   StyledForm,
   Inputs,
   Titulo,
-  Button,
-  HeaderButtons,
+  Button
 } from "../styles2/AddTemasStyles.js";
 
 function EditandoTemas(props) {
@@ -27,7 +26,7 @@ function EditandoTemas(props) {
     const getDataById = async () => {
       try {
         const result = await axios.get(
-          `https://iglesia-backend.herokuapp.com/api/feedback/${id}`
+          `https://ijsv-backend.herokuapp.com/api/temas/${id}`
         );
         setVehicleDataById(result.data);
         console.log("results.data", result.data);
@@ -53,7 +52,7 @@ function EditandoTemas(props) {
       setLoading(true)
     axios
       .put(
-        `https://iglesia-backend.herokuapp.com/api/feedback/${id}`,
+        `https://ijsv-backend.herokuapp.com/api/temas/${id}`,
         editVehicleDataById
       )
 

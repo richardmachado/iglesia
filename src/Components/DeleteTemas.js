@@ -17,7 +17,7 @@ const override = css`
 function DeleteTemas(props) {
       const removeId = (id) => {
         axios
-          .delete(`https://iglesia-backend.herokuapp.com/api/feedback/${id}`)
+          .delete(`https://ijsv-backend.herokuapp.com/api/temas/${id}`)
           .then((res) => {
             props.history.push("/temas");
           })
@@ -31,7 +31,7 @@ function DeleteTemas(props) {
 
   useEffect(() => {
     axios
-      .get("https://iglesia-backend.herokuapp.com/api/feedback")
+      .get("https://ijsv-backend.herokuapp.com/api/temas")
       .then((response) => {
         setNeo(response.data);
         setLoading(true);
