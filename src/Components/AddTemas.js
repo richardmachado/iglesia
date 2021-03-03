@@ -4,13 +4,12 @@ import { useForm } from "react-hook-form";
 
 
 import { 
-  Login, 
+
   Container, 
   StyledForm, 
   Inputs,
   Titulo,
-  Button,
-  HeaderButtons
+  Button
   
 } from "../styles2/AddTemasStyles.js"
 
@@ -23,7 +22,7 @@ function AddTemas (props) {
       axios
         .post("https://ijsv-backend.herokuapp.com/api/temas", data)
         .then((res) => {
-          props.history.push("/editartemas");
+          props.history.push("/edittemas");
         })
         .catch((err) => {
           alert((err.message = "Tema failed"));
@@ -32,18 +31,8 @@ function AddTemas (props) {
     };
   
   
-    return (
+  return (
       <Container>
-        <HeaderButtons>
-          <Login onClick={() => props.history.push("/addtemas")} >
-            Anadir un tema
-          </Login>
-          <Login onClick={() => props.history.push("/borrartemas")}>
-            Borrar un Tema
-          </Login>
-          <Login onClick={() => props.history.push("/editartemas")}> Editar un Tema</Login>
-        </HeaderButtons>
-
         <form onSubmit={handleSubmit(onSubmit)}>
           <StyledForm>
             <label htmlFor="title"> </label>

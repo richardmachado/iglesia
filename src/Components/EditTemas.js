@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import * as ReactBootStrap from "react-bootstrap";
 
-import { Login, HeaderButtons } from "../styles2/AddTemasStyles";
 
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/core";
@@ -44,18 +43,6 @@ function DeleteTemas(props) {
   return (
     <div className="body">
       <div className="container">
-        <HeaderButtons>
-          <Login onClick={() => props.history.push("/addtemas")}>
-            Anadir un tema
-          </Login>
-          <Login onClick={() => props.history.push("/borrartemas")}>
-            Borrar un Tema
-          </Login>
-          <Login onClick={() => props.history.push("/editartemas")}>
-            {" "}
-            Editar un Tema
-          </Login>
-        </HeaderButtons>
         <h1 className="display-4 my3">
           <span className="text-dark"> </span> Cuidado cuando editando Temas
         </h1>

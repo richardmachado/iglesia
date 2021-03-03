@@ -16,7 +16,7 @@ export default function LoginForm(props) {
   const { register, handleSubmit, errors } = useForm();
   const [isLoading, setLoading] = useState(false);
 
-  
+ 
   const onSubmit = data => {
     setLoading(true)
     axiosWithAuth()
@@ -24,7 +24,7 @@ export default function LoginForm(props) {
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         props.history.push("/addtemas");
-        console.log(res);
+        window.location.reload()
       })
       .catch(handleErrors);
       
