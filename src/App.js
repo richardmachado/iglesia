@@ -19,7 +19,7 @@ import EditandoTemas from './Components/EditandoTemas';
 import Login from './Components/Login';
 import OldTestament from './Components/EnglishBible/OldTestament';
 import NewTestament from './Components/EnglishBible/NewTestament';
-import LogOut from './Components/LogOut';
+
 
 
 
@@ -42,7 +42,7 @@ export default function App() {
           <Route path="/editartemas" component={EditTemas} />
           <Route path="/login" component={Login} />
           <Route path="/editandotemas/:id" component={EditandoTemas} />
-          <Route Path="/logout" component={LogOut} />
+  
         </Switch>
         <Footer />
       </div>
@@ -65,7 +65,7 @@ export default function App() {
           <Route path="/editartemas" component={EditTemas} />
           <Route path="/login" component={Login} />
           <Route path="/editandotemas/:id" component={EditandoTemas} />
-          <Route Path="/logout" component={LogOut} />
+
         </Switch>
         <Footer />
       </div>
