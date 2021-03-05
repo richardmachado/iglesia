@@ -11,4 +11,4 @@ login to add themes (temas)
 full CRUD for temas fully functioning
 
 
-"testing" branch will remain seperate from master branch
+cypress testing for CRUD operations
