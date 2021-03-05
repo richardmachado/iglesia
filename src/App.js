@@ -5,22 +5,22 @@ import './App.css';
 import Navigation from './Components/Navigation/Navigation';
 import LoggedInNavigation from "./Components/Navigation/LoggedInNavigation"
 import Home from './Components/Home';
-import Footer from './Components/Footer';
+import Footer from './Components/Navigation/Footer';
 
 import Antiguo from './Components/SpanishBible/AntiguoTestamento';
 import Nuevo from './Components/SpanishBible/NuevoTestamento';
 
-import Temas from './Components/Temas';
-import AddTemas from './Components/AddTemas';
-import DeleteTemas from './Components/DeleteTemas';
-import EditTemas from './Components/EditTemas';
-import EditandoTemas from './Components/EditandoTemas';
+import Temas from './Components/Temas/Temas';
+import AddTemas from './Components/Temas/AddTemas';
+import DeleteTemas from './Components/Temas/DeleteTemas';
+import EditTemas from "./Components/Temas/EditTemas";
+import EditandoTemas from "./Components/Temas/EditandoTemas";
 
 import Login from './Components/Login';
 import OldTestament from './Components/EnglishBible/OldTestament';
 import NewTestament from './Components/EnglishBible/NewTestament';
 
-
+import PrivateRoute from "./utils/PrivateRoutes"
 
 
 export default function App() {
@@ -37,12 +37,11 @@ export default function App() {
           <Route path="/antiguotestamento" component={Antiguo} />
           <Route path="/nuevotestamento" component={Nuevo} />
           <Route path="/temas" component={Temas} />
-          <Route path="/addtemas" component={AddTemas} />
-          <Route path="/borrartemas" component={DeleteTemas} />
-          <Route path="/editartemas" component={EditTemas} />
           <Route path="/login" component={Login} />
-          <Route path="/editandotemas/:id" component={EditandoTemas} />
-  
+          <PrivateRoute path="/addtemas" component={AddTemas} />
+          <PrivateRoute path="/borrartemas" component={DeleteTemas} />
+          <PrivateRoute path="/editartemas" component={EditTemas} />
+          <PrivateRoute path="/editandotemas/:id" component={EditandoTemas} />
         </Switch>
         <Footer />
       </div>

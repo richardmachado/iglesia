@@ -1,38 +1,73 @@
-import React, {useState} from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { withRouter, Link } from "react-router-dom";
 
-
-import { 
-
-  Container, 
-  StyledForm, 
+import {
+  Container,
+  StyledForm,
   Inputs,
   Titulo,
-  Button
-  
-} from "../styles2/AddTemasStyles.js"
+  Button,
+} from "../../styles2/AddTemasStyles.js";
 
-function AddTemas (props) {
-    const { register, handleSubmit, errors } = useForm();
-    const [isLoading, setLoading] = useState(false);
-  
-    const onSubmit = data => {
-      setLoading(true);
-      axios
-        .post("https://ijsv-backend.herokuapp.com/api/temas", data)
-        .then((res) => {
-          props.history.push("/editartemas");
-        })
-        .catch((err) => {
-          alert((err.message = "Tema failed"));
-          console.log(err.response);
-        });
+function EditandoTemas(props) {
+  const [getVehicleDataById, setVehicleDataById] = useState([]);
+  const [editVehicleDataById, latestEdit] = useState([]);
+  const [isLoading, setLoading] = useState(false);
+
+  const { register, handleSubmit, errors } = useForm();
+
+  const id = props.match.params.id;
+
+  useEffect(() => {
+    const getDataById = async () => {
+      try {
+        const result = await axios.get(
+          `https://ijsv-backend.herokuapp.com/api/temas/${id}`
+        );
+        setVehicleDataById(result.data[0]);
+        console.log("results.data", result.data);
+      } catch (error) {
+        console.log(error);
+      }
     };
-  
-  
+    getDataById();
+  }, [id]);
+
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+
+    const newData = Object.assign({}, getVehicleDataById, { [name]: value });
+    setVehicleDataById(newData);
+
+    const latestData = Object.assign({}, editVehicleDataById, {
+      [name]: value,
+    });
+    latestEdit(latestData);
+  };
+  const onSubmit = () => {
+    setLoading(true);
+    axios
+      .put(
+        `https://ijsv-backend.herokuapp.com/api/temas/${id}`,
+        editVehicleDataById
+      )
+      .then((res) => {
+        props.history.push("/editartemas");
+        console.log("response", res);
+      })
+      .catch((err) => {
+        alert((err.message = "Editing Tema Failed"));
+        console.log(err.response);
+      });
+  };
   return (
-      <Container>
+    <Container>
+      <Link to="/editartemas">
+        <Button>Cancel</Button>
+      </Link>
+      <StyledForm>
         <form onSubmit={handleSubmit(onSubmit)}>
           <StyledForm>
             <label htmlFor="title"> </label>
@@ -44,6 +79,8 @@ function AddTemas (props) {
               aria-invalid={errors.title ? "true" : "false"}
               aria-describedby="error-title-required error-title-maxLength"
               ref={register({ required: true, minLength: 1, maxLength: 128 })}
+              onChange={handleChange}
+              value={getVehicleDataById.title}
             />
             <span
               role="alert"
@@ -77,6 +114,8 @@ function AddTemas (props) {
               aria-invalid={errors.body1 ? "true" : "false"}
               aria-describedby="error-body-required error-title-maxLength"
               ref={register({ required: true, minLength: 1, maxLength: 10024 })}
+              onChange={handleChange}
+              value={getVehicleDataById.body1}
             />
 
             <span
@@ -112,6 +151,8 @@ function AddTemas (props) {
                 minLength: 1,
                 maxLength: 10024,
               })}
+              onChange={handleChange}
+              value={getVehicleDataById.body2}
             />
             <label htmlFor="feedback"></label>
             <Inputs
@@ -124,25 +165,26 @@ function AddTemas (props) {
                 minLength: 1,
                 maxLength: 10024,
               })}
+              onChange={handleChange}
+              value={getVehicleDataById.body3}
             />
             <div className="footer">
-              {!isLoading && <Button>Add Tema</Button>}
+              {!isLoading && <Button>Editar Tema</Button>}
 
               {isLoading && (
                 <Button>
                   <i className="fas fa-spinner fa-spin" disabled={isLoading}>
-                    Adding Tema
+                    Editando Tema
                   </i>
                 </Button>
               )}
+              <p>Si nada cambio, usar el boton "cancel" arriba</p>
             </div>
           </StyledForm>
         </form>
-      </Container>
-    );
-  }
-  
-  
+      </StyledForm>
+    </Container>
+  );
+}
 
-
-export default AddTemas;
+export default withRouter(EditandoTemas);
