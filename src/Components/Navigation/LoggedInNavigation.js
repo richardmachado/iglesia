@@ -23,7 +23,7 @@ class LoggedInNavigation extends Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar style={{ backgroundColor: "#FAEBD7" }} light expand="md">
           <NavbarBrand href="/addtemas">Add Temas</NavbarBrand>
           <NavbarBrand href="/editartemas">Edit Temas</NavbarBrand>
           <NavbarBrand href="/borrartemas">Delete Temas</NavbarBrand>

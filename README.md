@@ -12,3 +12,7 @@ full CRUD for temas fully functioning
 
 
 cypress testing for CRUD operations
+
+cypress testing for login
+
+cypress testing for private routes, make sure they're inaccessible unless logged in

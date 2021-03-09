@@ -12,9 +12,7 @@ import {
     DropdownItem
 } from 'reactstrap';
 
-
-
-class Header extends Component {
+class Navigation extends Component {
     constructor(props) {
         super(props);
 
@@ -31,15 +29,13 @@ class Header extends Component {
         });
     }
     render() {
-        
         if (localStorage.getItem('token') === null) {
             return (
                 <div>
                     <Navbar color="light" light expand="md">
                         <NavbarBrand href="/">Home </NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
-                        <Nav className="ml-auto" navbar>
-                       
+                        <Nav className="ml-auto" navbar>  
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav caret>
                                     Bible
@@ -51,7 +47,6 @@ class Header extends Component {
                                     <DropdownItem>
                                         <NavLink href="/newtestament">New Testament</NavLink>
                                     </DropdownItem>
-                                  
                                 </DropdownMenu>
                             </UncontrolledDropdown>
                             <UncontrolledDropdown nav inNavbar>
@@ -64,20 +59,16 @@ class Header extends Component {
                                     </DropdownItem>
                                     <DropdownItem>
                                         <NavLink href="/nuevotestamento">Nuevo Testamento</NavLink>
-                                    </DropdownItem>
-                                  
+                                    </DropdownItem>                                  
                                 </DropdownMenu>
                             </UncontrolledDropdown>
-
                             <NavItem>
                                 <NavLink href="/temas">Temas</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/login">Login</NavLink>
-                            </NavItem>
-                           
-                        </Nav>
-                
+                            </NavItem>                          
+                        </Nav>               
                     </Navbar>
                 </div>
             )
@@ -118,7 +109,6 @@ class Header extends Component {
                         </DropdownItem>
                       </DropdownMenu>
                     </UncontrolledDropdown>
-
                     <NavItem>
                       <NavLink href="/temas">Temas</NavLink>
                     </NavItem>
@@ -135,4 +125,4 @@ class Header extends Component {
     } 
 }
 
-export default Header
+export default Navigation
