@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 import "../../App.css";
 import * as ReactBootStrap from "react-bootstrap";
 
-
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/core";
-
 
 const override = css`
   display: block;
@@ -16,7 +14,6 @@ const override = css`
 `;
 
 function DeleteTemas(props) {
-
   const [neon, setNeo] = useState([]);
   const [loading, setLoading] = useState(false);
 

@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 
-
-it('should navigate to login to  ijsv', function() {
+it("should navigate to login to  ijsv", function () {
   cy.visit("http://localhost:3000");
   cy.get(":nth-child(4) > .nav-link").click();
   cy.get('[for="username"] > .sc-bkzZxe').type("anselmo");
@@ -12,7 +11,4 @@ it('should navigate to login to  ijsv', function() {
   cy.get('[href="/borrartemas"]');
   //logout
   cy.get(":nth-child(4) > .nav-link").click();
-})
-
-
-
+});

@@ -3,7 +3,6 @@ import axios from "axios";
 import "../../App.css";
 import * as ReactBootStrap from "react-bootstrap";
 
-
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/core";
 
@@ -14,17 +13,17 @@ const override = css`
 `;
 
 function DeleteTemas(props) {
-      const removeId = (id) => {
-        axios
-          .delete(`https://ijsv-backend.herokuapp.com/api/temas/${id}`)
-          .then((res) => {
-            window.location.reload();
-          })
-          .catch((err) => {
-            alert((err.message = "Tema failed to delete"));
-            console.log(err.response);
-          });
-      };
+  const removeId = (id) => {
+    axios
+      .delete(`https://ijsv-backend.herokuapp.com/api/temas/${id}`)
+      .then((res) => {
+        window.location.reload();
+      })
+      .catch((err) => {
+        alert((err.message = "Tema failed to delete"));
+        console.log(err.response);
+      });
+  };
   const [neon, setNeo] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -51,7 +50,6 @@ function DeleteTemas(props) {
   return (
     <div className="body">
       <div className="container">
-
         <h1 className="display-4 my3">
           <span className="text-dark"> </span> Cuidado cuando borrando Temas
         </h1>

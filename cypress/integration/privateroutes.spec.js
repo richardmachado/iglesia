@@ -1,4 +1,4 @@
-it('should not be able to access crud operations without being logged in', function () {
+it("should not be able to access crud operations without being logged in", function () {
   cy.visit("http://localhost:3000/addtemas");
   //should be redirected to login
   cy.get(":nth-child(4) > .nav-link").click();
@@ -10,4 +10,4 @@ it('should not be able to access crud operations without being logged in', funct
   cy.get('[href="/borrartemas"]');
   //logout
   cy.get(":nth-child(4) > .nav-link").click();
-})
+});
