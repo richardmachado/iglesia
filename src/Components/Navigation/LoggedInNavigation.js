@@ -20,9 +20,7 @@ class LoggedInNavigation extends Component {
     return (
       <div>
         <Navbar style={{ backgroundColor: "#FAEBD7" }} light expand="md">
-          <NavbarBrand hre f="/addtemas">
-            Add Temas
-          </NavbarBrand>
+          <NavbarBrand href="/addtemas">Add Temas</NavbarBrand>
           <NavbarBrand href="/editartemas">Edit Temas</NavbarBrand>
           <NavbarBrand href="/borrartemas">Delete Temas</NavbarBrand>
           <Nav className="ml-auto" navbar></Nav>
