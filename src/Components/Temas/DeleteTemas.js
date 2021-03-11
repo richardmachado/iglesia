@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+// import Modal from "react-modal";
+import { Link } from "react-router-dom";
 import "../../App.css";
 import * as ReactBootStrap from "react-bootstrap";
 
@@ -12,20 +14,48 @@ const override = css`
   border-color: red;
 `;
 
+// const customStyles = {
+//   content: {
+//     top: "50%",
+//     left: "50%",
+//     right: "auto",
+//     bottom: "auto",
+//     marginRight: "-50%",
+//     transform: "translate(-50%, -50%)",
+//   },
+// };
+
 function DeleteTemas(props) {
-  const removeId = (id) => {
-    axios
-      .delete(`https://ijsv-backend.herokuapp.com/api/temas/${id}`)
-      .then((res) => {
-        window.location.reload();
-      })
-      .catch((err) => {
-        alert((err.message = "Tema failed to delete"));
-        console.log(err.response);
-      });
-  };
+  // const removeId = (id) => {
+  //   axios
+  //     .delete(`https://ijsv-backend.herokuapp.com/api/temas/${id}`)
+  //     .then((res) => {
+  //       window.location.reload();
+  //     })
+  //     .catch((err) => {
+  //       alert((err.message = "Tema failed to delete"));
+  //       console.log(err.response);
+  //     });
+  // };
   const [neon, setNeo] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  // const [modalIsOpen, setIsOpen] = useState(false);
+
+  // function openModal() {
+  //   setIsOpen(true);
+
+  // }
+
+  // var subtitle;
+  // function afterOpenModal() {
+  //   // references are now sync'd and can be accessed.
+  //   subtitle.style.color = "#f00";
+  // }
+
+  // function closeModal() {
+  //   setIsOpen(false);
+  // }
 
   useEffect(() => {
     axios
@@ -53,25 +83,17 @@ function DeleteTemas(props) {
         <h1 className="display-4 my3">
           <span className="text-dark"> </span> Cuidado cuando borrando Temas
         </h1>
-        {neon.map((biblename) => {
+        {neon.map((temas) => {
           return (
-            <div className="tema-box" key={biblename.id}>
-              <h2 className="temas-title">{biblename.title} </h2>
-              <button
-                class="btn btn-danger"
-                onClick={() => {
-                  if (
-                    window.confirm("Está seguro que quiere borrar este tema?")
-                  ) {
-                    removeId(biblename.id);
-                  }
-                }}
-              >
-                Borrar
-              </button>
-              <p className="temas-body">{biblename.body1}</p>
-              <p className="temas-body">{biblename.body2}</p>
-              <p className="temas-body">{biblename.body3}</p>
+            <div className="tema-box" key={temas.id}>
+              <h2 className="temas-title">{temas.title} </h2>
+              <Link to={`/borrandotemas/${temas.id}`}>
+                <button className="btn btn-danger">Delete</button>
+              </Link>
+
+              <p className="temas-body">{temas.body1}</p>
+              <p className="temas-body">{temas.body2}</p>
+              <p className="temas-body">{temas.body3}</p>
             </div>
           );
         })}

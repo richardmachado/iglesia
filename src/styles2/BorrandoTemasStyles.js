@@ -42,7 +42,23 @@ export const Button = styled.button`
   font-size: 21px;
   padding: 5px 20px;
   border: 0;
-  background-color: #DADADA;
+  background-color: red;
+  color: #fff;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #FFB90F;
+  }
+  &:focus {
+    outline: none;
+  `;
+
+export const CancelButton = styled.button`
+  font-size: 21px;
+  padding: 5px 20px;
+  border: 0;
+  background-color: dodgerblue;
   color: #fff;
   border-radius: 3px;
   transition: all 250ms ease-in-out;
@@ -54,6 +70,9 @@ export const Button = styled.button`
     outline: none;
   `;
 export const HeaderButtons = styled.button`
+display:flex;
+justify-content:space-around;
+justify-items:center;
   font-size: 21px;
   padding: 5px 20px;
   border: 0;
@@ -61,9 +80,7 @@ export const HeaderButtons = styled.button`
   color: #fff;
   border-radius: 3px;
   transition: all 250ms ease-in-out;
-  &:hover {
-    background-color: gold;
-  }
+
   &:focus {
     outline: none;
   `;
@@ -117,4 +134,8 @@ export const Inputs = styled.textarea`
   @media only screen and (max-width: 750px) {
     min-width: 20rem;
   }
+`;
+
+export const TemasBody = styled.p`
+  font-size: 14px;
 `;

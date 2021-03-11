@@ -19,6 +19,7 @@ import AddTemas from "./Components/Temas/AddTemas";
 import DeleteTemas from "./Components/Temas/DeleteTemas";
 import EditTemas from "./Components/Temas/EditTemas";
 import EditandoTemas from "./Components/Temas/EditandoTemas";
+import BorrandoTemas from "./Components/Temas/BorrandoTemas";
 
 import Login from "./Components/Login";
 
@@ -37,10 +38,6 @@ export default function App() {
           <Route path="/nuevotestamento" component={Nuevo} />
           <Route path="/temas" component={Temas} />
           <Route path="/login" component={Login} />
-          <PrivateRoute path="/addtemas" component={AddTemas} />
-          <PrivateRoute path="/borrartemas" component={DeleteTemas} />
-          <PrivateRoute path="/editartemas" component={EditTemas} />
-          <PrivateRoute path="/editandotemas/:id" component={EditandoTemas} />
         </Switch>
         <Footer />
       </div>
@@ -62,6 +59,7 @@ export default function App() {
           <Route path="/editartemas" component={EditTemas} />
           <Route path="/login" component={Login} />
           <Route path="/editandotemas/:id" component={EditandoTemas} />
+          <PrivateRoute path="/borrandotemas/:id" component={BorrandoTemas} />
         </Switch>
         <Footer />
       </div>

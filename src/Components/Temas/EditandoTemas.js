@@ -168,21 +168,21 @@ function EditandoTemas(props) {
               onChange={handleChange}
               value={getVehicleDataById.body3}
             />
-            <div className="footer">
-              {!isLoading && <Button>Editar Tema</Button>}
-
-              {isLoading && (
-                <Button>
-                  <i className="fas fa-spinner fa-spin" disabled={isLoading}>
-                    Editando Tema
-                  </i>
-                </Button>
-              )}
-              <p>Si nada cambio, usar el boton "cancel" arriba</p>
-            </div>
           </StyledForm>
         </form>
       </StyledForm>
+      <div className="footer">
+        {!isLoading && <Button>Editar Tema</Button>}
+
+        {isLoading && (
+          <Button>
+            <i className="fas fa-spinner fa-spin" disabled={isLoading}>
+              Editando Tema
+            </i>
+          </Button>
+        )}
+        <p>Si nada cambio, usar el boton "cancel" arriba</p>
+      </div>
     </Container>
   );
 }

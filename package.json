@@ -17,11 +17,13 @@
     "jquery": "3.5.0",
     "mdbreact": "^4.27.0",
     "node-sass": "4.14.1",
+    "prettier": "^2.2.1",
     "react": "17.0.0",
     "react-bootstrap": "^1.0.1",
     "react-dom": "17.0.0",
     "react-hook-form": "^5.7.2",
     "react-is": "^17.0.1",
+    "react-modal": "^3.12.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-spinners": "0.10.0-alpha.3",
@@ -32,7 +34,8 @@
     "start": "react-scripts start",
     "build": "CI= react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
   "eslintConfig": {
     "extends": "react-app"
