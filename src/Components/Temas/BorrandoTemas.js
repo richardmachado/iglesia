@@ -50,33 +50,31 @@ function BorrandoTemas(props) {
   };
   return (
     <Container>
-      <HeaderButtons>
-        <Link to="/borrartemas">
-          <CancelButton>Cancelar</CancelButton>
-        </Link>
-
-        {!isLoading && <Button>Borrar Tema</Button>}
-
-        {isLoading && (
-          <Button>
-            <i className="fas fa-spinner fa-spin" disabled={isLoading}>
-              Borrando Tema
-            </i>
-          </Button>
-        )}
-      </HeaderButtons>
-      <p>Si no quiere borrar, usar el boton "cancelar"</p>
-
-      <div className="tema-box" key={getVehicleDataById.id}>
-        <h4 className="temas-title">{getVehicleDataById.title} </h4>
-        <TemasBody>{getVehicleDataById.body1} </TemasBody>
-        <TemasBody>{getVehicleDataById.body2} </TemasBody>
-        <TemasBody>{getVehicleDataById.body3} </TemasBody>
-      </div>
-
       <StyledForm>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <StyledForm></StyledForm>
+          <HeaderButtons>
+            <Link to="/borrartemas">
+              <CancelButton>Cancelar</CancelButton>
+            </Link>
+
+            {!isLoading && <Button>Borrar Tema</Button>}
+
+            {isLoading && (
+              <Button>
+                <i className="fas fa-spinner fa-spin" disabled={isLoading}>
+                  Borrando Tema
+                </i>
+              </Button>
+            )}
+          </HeaderButtons>
+          <p>Si no quiere borrar, usar el boton "cancelar"</p>
+
+          <div className="tema-box" key={getVehicleDataById.id}>
+            <h4 className="temas-title">{getVehicleDataById.title} </h4>
+            <TemasBody>{getVehicleDataById.body1} </TemasBody>
+            <TemasBody>{getVehicleDataById.body2} </TemasBody>
+            <TemasBody>{getVehicleDataById.body3} </TemasBody>
+          </div>
         </form>
       </StyledForm>
     </Container>
