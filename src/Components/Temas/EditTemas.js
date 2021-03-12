@@ -49,7 +49,7 @@ function DeleteTemas(props) {
               <h2 className="temas-title">{biblename.title} </h2>
 
               <Link to={`/editandotemas/${biblename.id}`}>
-                <button class="btn btn-info">Edit</button>
+                <button className="btn btn-info">Edit</button>
               </Link>
               <p className="temas-body">{biblename.body1}</p>
               <p className="temas-body">{biblename.body2}</p>

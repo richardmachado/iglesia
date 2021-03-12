@@ -46,8 +46,10 @@ function EditandoTemas(props) {
     });
     latestEdit(latestData);
   };
+
   const onSubmit = () => {
     setLoading(true);
+    console.log("it's wokring");
     axios
       .put(
         `https://ijsv-backend.herokuapp.com/api/temas/${id}`,
@@ -67,122 +69,122 @@ function EditandoTemas(props) {
       <Link to="/editartemas">
         <Button>Cancel</Button>
       </Link>
-      <StyledForm>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <StyledForm>
-            <label htmlFor="title"> </label>
-            <Titulo
-              type="text"
-              placeholder="Título"
-              id="title"
-              name="title"
-              aria-invalid={errors.title ? "true" : "false"}
-              aria-describedby="error-title-required error-title-maxLength"
-              ref={register({ required: true, minLength: 1, maxLength: 128 })}
-              onChange={handleChange}
-              value={getVehicleDataById.title}
-            />
-            <span
-              role="alert"
-              id="error-name-required"
-              style={{
-                display:
-                  errors.title && errors.title.type === "required"
-                    ? "block"
-                    : "none",
-              }}
-            >
-              Titulo es obligatorio
-            </span>
-            <span
-              role="alert"
-              id="error-name-maxLength"
-              style={{
-                display:
-                  errors.name && errors.name.type === "maxLength"
-                    ? "block"
-                    : "none",
-              }}
-            ></span>
 
-            <label htmlFor="feedback"></label>
-            <Inputs
-              type="text"
-              placeholder="Primer párrafo"
-              id="body1"
-              name="body1"
-              aria-invalid={errors.body1 ? "true" : "false"}
-              aria-describedby="error-body-required error-title-maxLength"
-              ref={register({ required: true, minLength: 1, maxLength: 10024 })}
-              onChange={handleChange}
-              value={getVehicleDataById.body1}
-            />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <StyledForm>
+          <label htmlFor="title"> </label>
+          <Titulo
+            type="text"
+            placeholder="Título"
+            id="title"
+            name="title"
+            aria-invalid={errors.title ? "true" : "false"}
+            aria-describedby="error-title-required error-title-maxLength"
+            ref={register({ required: true, minLength: 1, maxLength: 128 })}
+            onChange={handleChange}
+            value={getVehicleDataById.title}
+          />
+          <span
+            role="alert"
+            id="error-name-required"
+            style={{
+              display:
+                errors.title && errors.title.type === "required"
+                  ? "block"
+                  : "none",
+            }}
+          >
+            Titulo es obligatorio
+          </span>
+          <span
+            role="alert"
+            id="error-name-maxLength"
+            style={{
+              display:
+                errors.name && errors.name.type === "maxLength"
+                  ? "block"
+                  : "none",
+            }}
+          ></span>
 
-            <span
-              role="alert"
-              id="error-name-required"
-              style={{
-                display:
-                  errors.body1 && errors.body1.type === "required"
-                    ? "block"
-                    : "none",
-              }}
-            >
-              Primer párrafo es obligatorio
-            </span>
-            <span
-              role="alert"
-              id="error-feedback-maxLength"
-              style={{
-                display:
-                  errors.body1 && errors.body1.type === "maxLength"
-                    ? "block"
-                    : "none",
-              }}
-            ></span>
-            <label htmlFor="feedback"></label>
-            <Inputs
-              type="text"
-              placeholder="Segundo párrafo"
-              id="body2"
-              name="body2"
-              ref={register({
-                required: false,
-                minLength: 1,
-                maxLength: 10024,
-              })}
-              onChange={handleChange}
-              value={getVehicleDataById.body2}
-            />
-            <label htmlFor="feedback"></label>
-            <Inputs
-              type="text"
-              placeholder="Tercer párrafo"
-              id="body3"
-              name="body3"
-              ref={register({
-                required: false,
-                minLength: 1,
-                maxLength: 10024,
-              })}
-              onChange={handleChange}
-              value={getVehicleDataById.body3}
-            />
-          </StyledForm>
-        </form>
-      </StyledForm>
-      <div className="footer">
-        {!isLoading && <Button>Editar Tema</Button>}
+          <label htmlFor="feedback"></label>
+          <Inputs
+            type="text"
+            placeholder="Primer párrafo"
+            id="body1"
+            name="body1"
+            aria-invalid={errors.body1 ? "true" : "false"}
+            aria-describedby="error-body-required error-title-maxLength"
+            ref={register({ required: true, minLength: 1, maxLength: 10024 })}
+            onChange={handleChange}
+            value={getVehicleDataById.body1}
+          />
 
-        {isLoading && (
-          <Button>
-            <i className="fas fa-spinner fa-spin" disabled={isLoading}>
-              Editando Tema
-            </i>
-          </Button>
-        )}
-        <p>Si nada cambio, usar el boton "cancel" arriba</p>
-      </div>
+          <span
+            role="alert"
+            id="error-name-required"
+            style={{
+              display:
+                errors.body1 && errors.body1.type === "required"
+                  ? "block"
+                  : "none",
+            }}
+          >
+            Primer párrafo es obligatorio
+          </span>
+          <span
+            role="alert"
+            id="error-feedback-maxLength"
+            style={{
+              display:
+                errors.body1 && errors.body1.type === "maxLength"
+                  ? "block"
+                  : "none",
+            }}
+          ></span>
+          <label htmlFor="feedback"></label>
+          <Inputs
+            type="text"
+            placeholder="Segundo párrafo"
+            id="body2"
+            name="body2"
+            ref={register({
+              required: false,
+              minLength: 1,
+              maxLength: 10024,
+            })}
+            onChange={handleChange}
+            value={getVehicleDataById.body2}
+          />
+          <label htmlFor="feedback"></label>
+          <Inputs
+            type="text"
+            placeholder="Tercer párrafo"
+            id="body3"
+            name="body3"
+            ref={register({
+              required: false,
+              minLength: 1,
+              maxLength: 10024,
+            })}
+            onChange={handleChange}
+            value={getVehicleDataById.body3}
+          />
+        </StyledForm>
+
+        <div className="footer">
+          {!isLoading && <Button>Editar Tema</Button>}
+
+          {isLoading && (
+            <Button>
+              <i className="fas fa-spinner fa-spin" disabled={isLoading}>
+                Editando Tema
+              </i>
+            </Button>
+          )}
+          <p>Si nada cambio, usar el boton "cancel" arriba</p>
+        </div>
+      </form>
     </Container>
   );
 }
