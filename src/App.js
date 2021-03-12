@@ -38,6 +38,13 @@ export default function App() {
           <Route path="/nuevotestamento" component={Nuevo} />
           <Route path="/temas" component={Temas} />
           <Route path="/login" component={Login} />
+          {/* PrivateRoutes should not work if not logged in*/}
+          <PrivateRoute path="/addtemas" component={AddTemas} />
+          <PrivateRoute path="/borrartemas" component={DeleteTemas} />
+          <PrivateRoute path="/editartemas" component={EditTemas} />
+          <PrivateRoute path="/editandotemas/:id" component={EditandoTemas} />
+          <PrivateRoute path="/borrandotemas/:id" component={BorrandoTemas} />
+          <Route path="*" component={Home} />
         </Switch>
         <Footer />
       </div>
@@ -48,18 +55,19 @@ export default function App() {
         <Navigation />
         <LoggedInNavigation />
         <Switch>
-          <Route exact path="/" component={Home} />
           <Route path="/oldtestament" component={OldTestament} />
           <Route path="/newtestament" component={NewTestament} />
           <Route path="/antiguotestamento" component={Antiguo} />
           <Route path="/nuevotestamento" component={Nuevo} />
           <Route path="/temas" component={Temas} />
-          <Route path="/addtemas" component={AddTemas} />
-          <Route path="/borrartemas" component={DeleteTemas} />
-          <Route path="/editartemas" component={EditTemas} />
           <Route path="/login" component={Login} />
-          <Route path="/editandotemas/:id" component={EditandoTemas} />
+          {/* PrivateRoutes */}
+          <PrivateRoute path="/addtemas" component={AddTemas} />
+          <PrivateRoute path="/borrartemas" component={DeleteTemas} />
+          <PrivateRoute path="/editartemas" component={EditTemas} />
+          <PrivateRoute path="/editandotemas/:id" component={EditandoTemas} />
           <PrivateRoute path="/borrandotemas/:id" component={BorrandoTemas} />
+          <Route path="*" component={Home} />
         </Switch>
         <Footer />
       </div>
