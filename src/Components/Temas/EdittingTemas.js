@@ -11,9 +11,9 @@ import {
   Button,
 } from "../../styles2/AddTemasStyles.js";
 
-function EditandoTemas(props) {
-  const [getVehicleDataById, setVehicleDataById] = useState([]);
-  const [editVehicleDataById, latestEdit] = useState([]);
+function EdittingTemas(props) {
+  const [getTemasDataById, setTemasDataById] = useState([]);
+  const [editTemasDataById, latestEdit] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
   const { register, handleSubmit, errors } = useForm();
@@ -26,7 +26,7 @@ function EditandoTemas(props) {
         const result = await axios.get(
           `https://ijsv-backend.herokuapp.com/api/temas/${id}`
         );
-        setVehicleDataById(result.data[0]);
+        setTemasDataById(result.data[0]);
         console.log("results.data", result.data);
       } catch (error) {
         console.log(error);
@@ -38,10 +38,10 @@ function EditandoTemas(props) {
   const handleChange = ({ target }) => {
     const { name, value } = target;
 
-    const newData = Object.assign({}, getVehicleDataById, { [name]: value });
-    setVehicleDataById(newData);
+    const newData = Object.assign({}, getTemasDataById, { [name]: value });
+    setTemasDataById(newData);
 
-    const latestData = Object.assign({}, editVehicleDataById, {
+    const latestData = Object.assign({}, editTemasDataById, {
       [name]: value,
     });
     latestEdit(latestData);
@@ -53,7 +53,7 @@ function EditandoTemas(props) {
     axios
       .put(
         `https://ijsv-backend.herokuapp.com/api/temas/${id}`,
-        editVehicleDataById
+        editTemasDataById
       )
       .then((res) => {
         props.history.push("/editartemas");
@@ -82,7 +82,7 @@ function EditandoTemas(props) {
             aria-describedby="error-title-required error-title-maxLength"
             ref={register({ required: true, minLength: 1, maxLength: 128 })}
             onChange={handleChange}
-            value={getVehicleDataById.title}
+            value={getTemasDataById.title}
           />
           <span
             role="alert"
@@ -117,7 +117,7 @@ function EditandoTemas(props) {
             aria-describedby="error-body-required error-title-maxLength"
             ref={register({ required: true, minLength: 1, maxLength: 10024 })}
             onChange={handleChange}
-            value={getVehicleDataById.body1}
+            value={getTemasDataById.body1}
           />
 
           <span
@@ -154,7 +154,7 @@ function EditandoTemas(props) {
               maxLength: 10024,
             })}
             onChange={handleChange}
-            value={getVehicleDataById.body2}
+            value={getTemasDataById.body2}
           />
           <label htmlFor="feedback"></label>
           <Inputs
@@ -168,7 +168,7 @@ function EditandoTemas(props) {
               maxLength: 10024,
             })}
             onChange={handleChange}
-            value={getVehicleDataById.body3}
+            value={getTemasDataById.body3}
           />
         </StyledForm>
 
@@ -189,4 +189,4 @@ function EditandoTemas(props) {
   );
 }
 
-export default withRouter(EditandoTemas);
+export default withRouter(EdittingTemas);

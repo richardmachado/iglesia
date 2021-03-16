@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import _ from "lodash";
-import { libros_de_biblia } from "../BibleBooks/librosnuevos";
+import { libros_de_biblia } from "../BibleBooks/bible_books_spanish_new_testament";
 import { Chapter, Header, PullDownText } from "../../styles2/BibleStyles";
 import * as ReactBootStrap from "react-bootstrap";
 
 const API_KEY = process.env.REACT_APP_SPANISH;
 
-function Nuevo() {
+function Spanish_New_Testament() {
   const [forms, setForms] = useState([]);
   const [chapter, setChapter] = useState(1);
   const [book, setBook] = useState("MAT");
@@ -104,4 +104,4 @@ function Nuevo() {
   }
 }
 
-export default Nuevo;
+export default Spanish_New_Testament;

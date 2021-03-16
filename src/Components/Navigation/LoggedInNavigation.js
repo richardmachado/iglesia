@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, NavbarBrand, Nav } from "reactstrap";
+import { Navbar, NavbarBrand } from "reactstrap";
 
 class LoggedInNavigation extends Component {
   constructor(props) {
@@ -20,10 +20,15 @@ class LoggedInNavigation extends Component {
     return (
       <div>
         <Navbar style={{ backgroundColor: "#FAEBD7" }} light expand="md">
-          <NavbarBrand href="/addtemas">Add Temas</NavbarBrand>
-          <NavbarBrand href="/editartemas">Edit Temas</NavbarBrand>
-          <NavbarBrand href="/borrartemas">Delete Temas</NavbarBrand>
-          <Nav className="ml-auto" navbar></Nav>
+          <button
+            href="/addtemas"
+            style={{ marginRight: 10, backgroundColor: "#f5e1c6" }}
+          >
+            Temas
+          </button>
+          <NavbarBrand href="/addtemas">Add </NavbarBrand>
+          <NavbarBrand href="/edittemas">Edit</NavbarBrand>
+          <NavbarBrand href="/deletetemas">Delete</NavbarBrand>
         </Navbar>
       </div>
     );
