@@ -8,8 +8,8 @@ import LoggedInNavigation from "./Components/Navigation/LoggedInNavigation";
 import Home from "./Components/Home";
 import Footer from "./Components/Navigation/Footer";
 
-import Antiguo from "./Components/SpanishBible/AntiguoTestamento";
-import Nuevo from "./Components/SpanishBible/NuevoTestamento";
+import Spanish_Old_Testament from "./Components/SpanishBible/Spanish_Old_Testament";
+import Spanish_New_Testament from "./Components/SpanishBible/Spanish_New_Testament";
 
 import OldTestament from "./Components/EnglishBible/OldTestament";
 import NewTestament from "./Components/EnglishBible/NewTestament";
@@ -18,8 +18,8 @@ import Temas from "./Components/Temas/Temas";
 import AddTemas from "./Components/Temas/AddTemas";
 import DeleteTemas from "./Components/Temas/DeleteTemas";
 import EditTemas from "./Components/Temas/EditTemas";
-import EditandoTemas from "./Components/Temas/EditandoTemas";
-import BorrandoTemas from "./Components/Temas/BorrandoTemas";
+import EdittingTemas from "./Components/Temas/EdittingTemas";
+import DeletingTemas from "./Components/Temas/DeletingTemas";
 
 import Login from "./Components/Login";
 
@@ -34,16 +34,17 @@ export default function App() {
           <Route exact path="/" component={Home} />
           <Route path="/oldtestament" component={OldTestament} />
           <Route path="/newtestament" component={NewTestament} />
-          <Route path="/antiguotestamento" component={Antiguo} />
-          <Route path="/nuevotestamento" component={Nuevo} />
+          <Route path="/antiguotestamento" component={Spanish_Old_Testament} />
+          <Route path="/nuevotestamento" component={Spanish_New_Testament} />
           <Route path="/temas" component={Temas} />
           <Route path="/login" component={Login} />
           {/* PrivateRoutes should not work if not logged in*/}
           <PrivateRoute path="/addtemas" component={AddTemas} />
-          <PrivateRoute path="/borrartemas" component={DeleteTemas} />
-          <PrivateRoute path="/editartemas" component={EditTemas} />
-          <PrivateRoute path="/editandotemas/:id" component={EditandoTemas} />
-          <PrivateRoute path="/borrandotemas/:id" component={BorrandoTemas} />
+          <PrivateRoute path="/deletetemas" component={DeleteTemas} />
+          <PrivateRoute path="/edittemas" component={EditTemas} />
+          <PrivateRoute path="/edittingtemas/:id" component={EdittingTemas} />
+          <PrivateRoute path="/deletingtemas/:id" component={DeletingTemas} />
+          {/* Reroute invalid links to home */}
           <Route path="*" component={Home} />
         </Switch>
         <Footer />
@@ -57,16 +58,17 @@ export default function App() {
         <Switch>
           <Route path="/oldtestament" component={OldTestament} />
           <Route path="/newtestament" component={NewTestament} />
-          <Route path="/antiguotestamento" component={Antiguo} />
-          <Route path="/nuevotestamento" component={Nuevo} />
+          <Route path="/antiguotestamento" component={Spanish_Old_Testament} />
+          <Route path="/nuevotestamento" component={Spanish_New_Testament} />
           <Route path="/temas" component={Temas} />
           <Route path="/login" component={Login} />
           {/* PrivateRoutes */}
           <PrivateRoute path="/addtemas" component={AddTemas} />
-          <PrivateRoute path="/borrartemas" component={DeleteTemas} />
-          <PrivateRoute path="/editartemas" component={EditTemas} />
-          <PrivateRoute path="/editandotemas/:id" component={EditandoTemas} />
-          <PrivateRoute path="/borrandotemas/:id" component={BorrandoTemas} />
+          <PrivateRoute path="/deletetemas" component={DeleteTemas} />
+          <PrivateRoute path="/edittemas" component={EditTemas} />
+          <PrivateRoute path="/edittingtemas/:id" component={EdittingTemas} />
+          <PrivateRoute path="/deletingtemas/:id" component={DeletingTemas} />
+          {/* Reroute invalid links to home */}
           <Route path="*" component={Home} />
         </Switch>
         <Footer />

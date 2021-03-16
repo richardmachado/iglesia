@@ -10,10 +10,10 @@ import {
   CancelButton,
   HeaderButtons,
   TemasBody,
-} from "../../styles2/BorrandoTemasStyles.js";
+} from "../../styles2/DeletingTemasStyles.js";
 
-function BorrandoTemas(props) {
-  const [getVehicleDataById, setVehicleDataById] = useState([]);
+function DeletingTemas(props) {
+  const [getTemasDataById, setTemasDataById] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
   const { handleSubmit } = useForm();
@@ -26,7 +26,7 @@ function BorrandoTemas(props) {
         const result = await axios.get(
           `https://ijsv-backend.herokuapp.com/api/temas/${id}`
         );
-        setVehicleDataById(result.data[0]);
+        setTemasDataById(result.data[0]);
         console.log("results.data", result.data);
       } catch (error) {
         console.log(error);
@@ -69,11 +69,11 @@ function BorrandoTemas(props) {
           </HeaderButtons>
           <p>Si no quiere borrar, usar el boton "cancelar"</p>
 
-          <div className="tema-box" key={getVehicleDataById.id}>
-            <h4 className="temas-title">{getVehicleDataById.title} </h4>
-            <TemasBody>{getVehicleDataById.body1} </TemasBody>
-            <TemasBody>{getVehicleDataById.body2} </TemasBody>
-            <TemasBody>{getVehicleDataById.body3} </TemasBody>
+          <div className="tema-box" key={getTemasDataById.id}>
+            <h4 className="temas-title">{getTemasDataById.title} </h4>
+            <TemasBody>{getTemasDataById.body1} </TemasBody>
+            <TemasBody>{getTemasDataById.body2} </TemasBody>
+            <TemasBody>{getTemasDataById.body3} </TemasBody>
           </div>
         </form>
       </StyledForm>
@@ -81,4 +81,4 @@ function BorrandoTemas(props) {
   );
 }
 
-export default withRouter(BorrandoTemas);
+export default withRouter(DeletingTemas);

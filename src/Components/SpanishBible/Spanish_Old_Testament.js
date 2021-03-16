@@ -3,11 +3,11 @@ import axios from "axios";
 import _ from "lodash";
 import { Chapter, Header, PullDownText } from "../../styles2/BibleStyles";
 import * as ReactBootStrap from "react-bootstrap";
-import { libros_de_biblia } from "../BibleBooks/librosantiguos";
+import { libros_de_biblia } from "../BibleBooks/bible_books_spanish_old_testament";
 
 const API_KEY = process.env.REACT_APP_SPANISH;
 
-function Antiguo() {
+function Spanish_Old_Testament() {
   const [forms, setForms] = useState([]);
   const [chapter, setChapter] = useState(1);
   const [book, setBook] = useState("GEN");
@@ -109,4 +109,4 @@ function Antiguo() {
   }
 }
 
-export default Antiguo;
+export default Spanish_Old_Testament;

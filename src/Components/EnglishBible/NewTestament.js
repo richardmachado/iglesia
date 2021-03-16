@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import _ from "lodash";
-import { newtestamentbooks } from "../BibleBooks/bible_books_newbooks";
+import { newtestamentbooks } from "../BibleBooks/bible_books_newtestament";
 import { Chapter, Header, PullDownText } from "../../styles2/BibleStyles";
 
 const API_KEY = process.env.REACT_APP_ENGLISH;
