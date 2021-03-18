@@ -87,7 +87,7 @@ function DeleteTemas(props) {
           return (
             <div className="tema-box" key={temas.id}>
               <h2 className="temas-title">{temas.title} </h2>
-              <Link to={`/borrandotemas/${temas.id}`}>
+              <Link to={`/deletingtemas/${temas.id}`}>
                 <button className="btn btn-danger">Delete</button>
               </Link>
 
