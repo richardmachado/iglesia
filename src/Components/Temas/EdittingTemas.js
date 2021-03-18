@@ -56,7 +56,7 @@ function EdittingTemas(props) {
         editTemasDataById
       )
       .then((res) => {
-        props.history.push("/editartemas");
+        props.history.push("/edittemas");
         console.log("response", res);
       })
       .catch((err) => {
@@ -66,7 +66,7 @@ function EdittingTemas(props) {
   };
   return (
     <Container>
-      <Link to="/editartemas">
+      <Link to="/edittemas">
         <Button>Cancel</Button>
       </Link>
 

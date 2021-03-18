@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import _ from "lodash";
-import { libros_de_biblia } from "../BibleBooks/bible_books_spanish_new_testament";
+import { spanish_books_new_testament } from "../BibleBooks/bible_books_spanish_new_testament";
 import { Chapter, Header, PullDownText } from "../../styles2/BibleStyles";
 import * as ReactBootStrap from "react-bootstrap";
 
@@ -45,7 +45,7 @@ function Spanish_New_Testament() {
         console.log(err);
       });
     // eslint-disable-next-line
-    libros_de_biblia.map((item) => {
+    spanish_books_new_testament.map((item) => {
       if (item.value === book) {
         return setNumberChapters(item.chapters);
       }
@@ -60,7 +60,7 @@ function Spanish_New_Testament() {
         <Header>Nuevo Testamento</Header>
         <PullDownText htmlFor="book">
           <select name="book" onChange={(e) => handleSubmit(e)} form="book">
-            {libros_de_biblia.map(({ value, label }) => (
+            {spanish_books_new_testament.map(({ value, label }) => (
               <option value={value}>{label}</option>
             ))}
           </select>

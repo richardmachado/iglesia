@@ -5,22 +5,6 @@ export const StyledForm = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  //added
-  width: 200px;
-  padding: 20px;
-`;
-
-export const Login = styled.button`
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
-  color: #5a4e4e;
-  mix-blend-mode: normal;
-  width: 10rem;
-  height: 100%;
-  cursor: pointer;
 `;
 
 export const Container = styled.div`
@@ -57,6 +41,7 @@ export const Button = styled.button`
 export const CancelButton = styled.button`
   font-size: 21px;
   padding: 5px 20px;
+  margin-right:1rem;
   border: 0;
   background-color: dodgerblue;
   color: #fff;
@@ -70,20 +55,12 @@ export const CancelButton = styled.button`
     outline: none;
   `;
 export const HeaderButtons = styled.button`
-display:flex;
-justify-content:space-around;
-justify-items:center;
-  font-size: 21px;
-  padding: 5px 20px;
-  border: 0;
-  background-color: #DADADA;
-  color: #fff;
-  border-radius: 3px;
-  transition: all 250ms ease-in-out;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
-  &:focus {
-    outline: none;
-  `;
+  border: none;
+`;
 
 // turn into styled components and delete any duplicates
 

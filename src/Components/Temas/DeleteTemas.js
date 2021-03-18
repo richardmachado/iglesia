@@ -14,48 +14,9 @@ const override = css`
   border-color: red;
 `;
 
-// const customStyles = {
-//   content: {
-//     top: "50%",
-//     left: "50%",
-//     right: "auto",
-//     bottom: "auto",
-//     marginRight: "-50%",
-//     transform: "translate(-50%, -50%)",
-//   },
-// };
-
 function DeleteTemas(props) {
-  // const removeId = (id) => {
-  //   axios
-  //     .delete(`https://ijsv-backend.herokuapp.com/api/temas/${id}`)
-  //     .then((res) => {
-  //       window.location.reload();
-  //     })
-  //     .catch((err) => {
-  //       alert((err.message = "Tema failed to delete"));
-  //       console.log(err.response);
-  //     });
-  // };
   const [neon, setNeo] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  // const [modalIsOpen, setIsOpen] = useState(false);
-
-  // function openModal() {
-  //   setIsOpen(true);
-
-  // }
-
-  // var subtitle;
-  // function afterOpenModal() {
-  //   // references are now sync'd and can be accessed.
-  //   subtitle.style.color = "#f00";
-  // }
-
-  // function closeModal() {
-  //   setIsOpen(false);
-  // }
 
   useEffect(() => {
     axios
@@ -81,7 +42,10 @@ function DeleteTemas(props) {
     <div className="body">
       <div className="container">
         <h1 className="display-4 my3">
-          <span className="text-dark"> </span> Cuidado cuando borrando Temas
+          <span className="text-dark" style={{ backgroundColor: "red" }}>
+            {" "}
+            Cuidado cuando borrando Temas !!
+          </span>
         </h1>
         {neon.map((temas) => {
           return (
@@ -90,7 +54,6 @@ function DeleteTemas(props) {
               <Link to={`/deletingtemas/${temas.id}`}>
                 <button className="btn btn-danger">Delete</button>
               </Link>
-
               <p className="temas-body">{temas.body1}</p>
               <p className="temas-body">{temas.body2}</p>
               <p className="temas-body">{temas.body3}</p>

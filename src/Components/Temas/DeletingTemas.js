@@ -40,7 +40,7 @@ function DeletingTemas(props) {
     axios
       .delete(`https://ijsv-backend.herokuapp.com/api/temas/${id}`)
       .then((res) => {
-        props.history.push("/editartemas");
+        props.history.push("/deletetemas");
         console.log("response", res);
       })
       .catch((err) => {
@@ -53,12 +53,11 @@ function DeletingTemas(props) {
       <StyledForm>
         <form onSubmit={handleSubmit(onSubmit)}>
           <HeaderButtons>
-            <Link to="/borrartemas">
+            {" "}
+            <Link to="/deletetemas">
               <CancelButton>Cancelar</CancelButton>
             </Link>
-
             {!isLoading && <Button>Borrar Tema</Button>}
-
             {isLoading && (
               <Button>
                 <i className="fas fa-spinner fa-spin" disabled={isLoading}>
@@ -67,6 +66,7 @@ function DeletingTemas(props) {
               </Button>
             )}
           </HeaderButtons>
+
           <p>Si no quiere borrar, usar el boton "cancelar"</p>
 
           <div className="tema-box" key={getTemasDataById.id}>

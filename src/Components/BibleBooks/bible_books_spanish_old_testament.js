@@ -1,4 +1,4 @@
-export const libros_de_biblia = [
+export const spanish_books_old_testament = [
   { value: "GEN", label: "Génesis", chapters: 50 },
   { value: "EXO", label: "Éxodo", chapters: 40 },
   { value: "LEV", label: "Levítico", chapters: 27 },

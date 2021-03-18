@@ -1,4 +1,4 @@
-export const libros_de_biblia = [
+export const spanish_books_new_testament = [
   { value: "MAT", label: "San Mateo", chapters: 28 },
   { value: "MRK", label: "San Marcos", chapters: 16 },
   { value: "LUK", label: "San Lucas", chapters: 24 },

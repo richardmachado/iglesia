@@ -3,7 +3,7 @@ import axios from "axios";
 import _ from "lodash";
 import { Chapter, Header, PullDownText } from "../../styles2/BibleStyles";
 import * as ReactBootStrap from "react-bootstrap";
-import { libros_de_biblia } from "../BibleBooks/bible_books_spanish_old_testament";
+import { spanish_books_old_testament } from "../BibleBooks/bible_books_spanish_old_testament";
 
 const API_KEY = process.env.REACT_APP_SPANISH;
 
@@ -49,7 +49,7 @@ function Spanish_Old_Testament() {
         console.log(err);
       });
     // eslint-disable-next-line
-    libros_de_biblia.map((item) => {
+    spanish_books_old_testament.map((item) => {
       if (item.value === book) {
         return setNumberChapters(item.chapters);
       }
@@ -65,7 +65,7 @@ function Spanish_Old_Testament() {
         <Header>Antiguo Testamento</Header>
         <PullDownText htmlFor="book">
           <select name="book" onChange={(e) => handleSubmit(e)} form="book">
-            {libros_de_biblia.map(({ value, label }) => (
+            {spanish_books_old_testament.map(({ value, label }) => (
               <option value={value}>{label}</option>
             ))}
           </select>
