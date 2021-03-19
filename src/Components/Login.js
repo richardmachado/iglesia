@@ -102,11 +102,14 @@ export default function LoginForm(props) {
             {!isLoading && <Button>Login</Button>}
 
             {isLoading && (
+              <>
               <Button>
                 <i className="fas fa-spinner fa-spin" disabled={isLoading}>
                   Logging in..
                 </i>
               </Button>
+                <p>Please allow a few seconds while server wakes up</p>
+                </>
             )}
           </div>
         </Styledform>
