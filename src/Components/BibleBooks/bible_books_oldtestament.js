@@ -26,7 +26,7 @@ export const oldtestamentbooks = [
   { value: "Lamentations", label: "Lamentations", chapters: 5 },
   { value: "Ezekiel", label: "Ezekiel", chapters: 48 },
   { value: "Daniel", label: "Daniel", chapters: 12 },
-  { value: "Hoseas", label: "Hoseas", chapters: 14 },
+  { value: "Hosea", label: "Hosea", chapters: 14 },
   { value: "Joel", label: "Joel", chapters: 3 },
   { value: "Amos", label: "Amos", chapters: 9 },
   { value: "Obadiah", label: "Obadiah", chapters: 1 },
