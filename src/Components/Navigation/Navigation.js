@@ -5,12 +5,15 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
+
+import {NavLink} from 'react-router-dom'
+
+import "./navigation.css";
 
 class Navigation extends Component {
   constructor(props) {
@@ -33,7 +36,7 @@ class Navigation extends Component {
       return (
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">Home </NavbarBrand>
+            <NavbarBrand to="/">Home </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Nav className="ml-auto" navbar>
               <UncontrolledDropdown nav inNavbar>
@@ -42,10 +45,10 @@ class Navigation extends Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    <NavLink href="/oldtestament">Old Testament</NavLink>
+                    <NavLink to="/oldtestament">Old Testament</NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                    <NavLink href="/newtestament">New Testament</NavLink>
+                    <NavLink to="/newtestament">New Testament</NavLink>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
@@ -55,20 +58,23 @@ class Navigation extends Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    <NavLink href="/antiguotestamento">
+                    <NavLink to="/antiguotestamento">
                       Antiguo Testamento
                     </NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                    <NavLink href="/nuevotestamento">Nuevo Testamento</NavLink>
+                    <NavLink to="/nuevotestamento">Nuevo Testamento</NavLink>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink href="/temas">Temas</NavLink>
+                <NavLink to="/temas" activeClassName="selected">
+                  {" "}
+                  Temas
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/login">Login</NavLink>
+                <NavLink to="/login">Login</NavLink>
               </NavItem>
             </Nav>
           </Navbar>
@@ -78,7 +84,7 @@ class Navigation extends Component {
       return (
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">Home </NavbarBrand>
+            <NavbarBrand to="/">Home </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Nav className="ml-auto" navbar>
               <UncontrolledDropdown nav inNavbar>
@@ -87,10 +93,10 @@ class Navigation extends Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    <NavLink href="/oldtestament">Old Testament</NavLink>
+                    <NavLink to="/oldtestament">Old Testament</NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                    <NavLink href="/newtestament">New Testament</NavLink>
+                    <NavLink to="/newtestament">New Testament</NavLink>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
@@ -100,20 +106,20 @@ class Navigation extends Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    <NavLink href="/antiguotestamento">
+                    <NavLink to="/antiguotestamento">
                       Antiguo Testamento
                     </NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                    <NavLink href="/nuevotestamento">Nuevo Testamento</NavLink>
+                    <NavLink to="/nuevotestamento">Nuevo Testamento</NavLink>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink href="/temas">Temas</NavLink>
+                <NavLink to="/temas">Temas</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/" onClick={() => localStorage.clear()}>
+                <NavLink to="/" onClick={() => localStorage.clear()}>
                   Logout
                 </NavLink>
               </NavItem>

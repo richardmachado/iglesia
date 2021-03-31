@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bible from "../styles2/unsplash-bible.jpg";
+import bible from "../styles2/unsplash-beach.jpg";
 
 export const Chapter = styled.div`
   width: 90%;

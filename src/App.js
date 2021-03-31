@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import { Switch, Route } from "react-router-dom";
 
 import "./App.css";
@@ -25,8 +25,11 @@ import Login from "./Components/Login";
 
 import PrivateRoute from "./utils/PrivateRoutes";
 
-export default function App() {
-  if (!localStorage.getItem("token")) {
+
+  export default function App() {
+    const [isAuthenticated, setAuthenticated] = useState(false);
+
+    if (!isAuthenticated) {
     return (
       <div className="App">
         <Navigation />
@@ -50,7 +53,8 @@ export default function App() {
         <Footer />
       </div>
     );
-  } else if (localStorage.getItem("token")) {
+    } else if (isAuthenticated) {
+      setAuthenticated(true)
     return (
       <div className="App">
         <Navigation />

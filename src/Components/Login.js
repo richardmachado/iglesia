@@ -24,7 +24,7 @@ export default function LoginForm(props) {
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         props.history.push("/addtemas");
-        window.location.reload();
+        // window.location.reload();
       })
       .catch(handleErrors);
   };
