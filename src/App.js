@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import "./App.css";
@@ -25,11 +25,10 @@ import Login from "./Components/Login";
 
 import PrivateRoute from "./utils/PrivateRoutes";
 
+export default function App() {
+  const [isAuthenticated, setAuthenticated] = useState(false);
 
-  export default function App() {
-    const [isAuthenticated, setAuthenticated] = useState(false);
-
-    if (!isAuthenticated) {
+  if (!isAuthenticated) {
     return (
       <div className="App">
         <Navigation />
@@ -53,8 +52,8 @@ import PrivateRoute from "./utils/PrivateRoutes";
         <Footer />
       </div>
     );
-    } else if (isAuthenticated) {
-      setAuthenticated(true)
+  } else if (isAuthenticated) {
+    setAuthenticated(true);
     return (
       <div className="App">
         <Navigation />
