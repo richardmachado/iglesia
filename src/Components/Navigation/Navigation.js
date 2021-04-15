@@ -15,20 +15,23 @@ import { NavLink } from "react-router-dom";
 
 import "./navigation.css";
 
+// https://kentcdodds.com/blog/authentication-in-react-applications
+
 class Navigation extends Component {
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false,
       navCollapsed: true,
       showNavbar: false,
+ 
     };
   }
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen,
+
     });
   }
   render() {
@@ -68,8 +71,7 @@ class Navigation extends Component {
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink to="/temas" activeClassName="selected">
-                  {" "}
+                <NavLink to="/temas">
                   Temas
                 </NavLink>
               </NavItem>
