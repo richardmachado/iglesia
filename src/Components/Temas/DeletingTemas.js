@@ -12,6 +12,8 @@ import {
   TemasBody,
 } from "../../styles2/DeletingTemasStyles.js";
 
+const BACKEND_API = process.env.REACT_APP_BACKEND;
+
 function DeletingTemas(props) {
   const [getTemasDataById, setTemasDataById] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -23,11 +25,8 @@ function DeletingTemas(props) {
   useEffect(() => {
     const getDataById = async () => {
       try {
-        const result = await axios.get(
-          `https://ijsv-backend.herokuapp.com/api/temas/${id}`
-        );
+        const result = await axios.get(`${BACKEND_API}/temas/${id}`);
         setTemasDataById(result.data[0]);
-        console.log("results.data", result.data);
       } catch (error) {
         console.log(error);
       }
@@ -38,7 +37,7 @@ function DeletingTemas(props) {
   const onSubmit = () => {
     setLoading(true);
     axios
-      .delete(`https://ijsv-backend.herokuapp.com/api/temas/${id}`)
+      .delete(`${BACKEND_API}/temas/${id}`)
       .then((res) => {
         props.history.push("/deletetemas");
         console.log("response", res);

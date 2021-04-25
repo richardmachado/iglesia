@@ -10,6 +10,8 @@ import {
   Button,
 } from "../../styles2/AddTemasStyles.js";
 
+const BACKEND_API = process.env.REACT_APP_BACKEND;
+
 function AddTemas(props) {
   const { register, handleSubmit, errors } = useForm();
   const [isLoading, setLoading] = useState(false);
@@ -17,7 +19,7 @@ function AddTemas(props) {
   const onSubmit = (data) => {
     setLoading(true);
     axios
-      .post("https://ijsv-backend.herokuapp.com/api/temas", data)
+      .post(`${BACKEND_API}/temas`, data)
       .then((res) => {
         props.history.push("/edittemas");
       })

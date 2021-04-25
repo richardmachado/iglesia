@@ -12,13 +12,15 @@ const override = css`
   border-color: red;
 `;
 
+const BACKEND_API = process.env.REACT_APP_BACKEND;
+
 function Temas() {
   const [neon, setNeo] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     axios
-      .get("https://ijsv-backend.herokuapp.com/api/temas")
+      .get(`${BACKEND_API}/temas`)
       .then((response) => {
         setNeo(response.data);
         setLoading(true);

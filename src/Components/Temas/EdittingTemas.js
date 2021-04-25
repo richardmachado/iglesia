@@ -11,6 +11,8 @@ import {
   Button,
 } from "../../styles2/AddTemasStyles.js";
 
+const BACKEND_API = process.env.REACT_APP_BACKEND;
+
 function EdittingTemas(props) {
   const [getTemasDataById, setTemasDataById] = useState([]);
   const [editTemasDataById, latestEdit] = useState([]);
@@ -23,9 +25,7 @@ function EdittingTemas(props) {
   useEffect(() => {
     const getDataById = async () => {
       try {
-        const result = await axios.get(
-          `https://ijsv-backend.herokuapp.com/api/temas/${id}`
-        );
+        const result = await axios.get(`${BACKEND_API}/temas/${id}`);
         setTemasDataById(result.data[0]);
         console.log("results.data", result.data);
       } catch (error) {
