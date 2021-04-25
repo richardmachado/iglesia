@@ -1,5 +1,10 @@
 Live website for ijsv.netlify.app
 
+.env requirements
+REACT_APP_ENGLISH=
+REACT_APP_SPANISH=
+REACT_APP_BACKEND=herokuapp/api
+
 Includes
 
 Spanish bible API
