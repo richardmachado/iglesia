@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bible from "../styles2/unsplash-bible.jpg";
+import biblebackground from "../styles2/unsplash-bible.jpg";
 
 export const Chapter = styled.div`
   width: 90%;
@@ -7,7 +7,7 @@ export const Chapter = styled.div`
   font-weight: bold;
   font-size: 1.5rem;
   text-align: left;
-  background: url(${bible});
+  background: url(${biblebackground});
   background-size: cover;
   color: black;
   padding-left: 1rem;
