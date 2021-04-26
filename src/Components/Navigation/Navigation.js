@@ -1,127 +1,76 @@
-import React, { Component } from "react";
-import {
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
+import React from "react";
+import { Nav, Navbar } from "react-bootstrap";
+import { NavLink } from "reactstrap";
 
-class Navigation extends Component {
-  constructor(props) {
-    super(props);
+import { Link } from "react-router-dom";
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false,
-      navCollapsed: true,
-      showNavbar: false,
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
-  }
-  render() {
-    if (localStorage.getItem("token") === null) {
-      return (
-        <div>
-          <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">Home </NavbarBrand>
-            <NavbarToggler onClick={this.toggle} />
-            <Nav className="ml-auto" navbar>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Bible
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    <NavLink href="/oldtestament">Old Testament</NavLink>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <NavLink href="/newtestament">New Testament</NavLink>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Biblia
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    <NavLink href="/antiguotestamento">
-                      Antiguo Testamento
-                    </NavLink>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <NavLink href="/nuevotestamento">Nuevo Testamento</NavLink>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <NavItem>
-                <NavLink href="/temas">Temas</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/login">Login</NavLink>
-              </NavItem>
+function Navigation() {
+  if (!localStorage.getItem("token")) {
+    return (
+      <div>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <NavLink tag={Link} to="/">
+            Home
+          </NavLink>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <NavLink tag={Link} to="/oldtestament">
+                Old Testament
+              </NavLink>
+
+              <NavLink tag={Link} to="/newtestament">
+                New Testament
+              </NavLink>
+
+              <NavLink tag={Link} to="/antiguotestamento">
+                Antiguo Testamento
+              </NavLink>
+              <NavLink tag={Link} to="/nuevotestamento">
+                Nuevo Testamento
+              </NavLink>
             </Nav>
-          </Navbar>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">Home </NavbarBrand>
-            <NavbarToggler onClick={this.toggle} />
-            <Nav className="ml-auto" navbar>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Bible
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    <NavLink href="/oldtestament">Old Testament</NavLink>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <NavLink href="/newtestament">New Testament</NavLink>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Biblia
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    <NavLink href="/antiguotestamento">
-                      Antiguo Testamento
-                    </NavLink>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <NavLink href="/nuevotestamento">Nuevo Testamento</NavLink>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <NavItem>
-                <NavLink href="/temas">Temas</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/" onClick={() => localStorage.clear()}>
-                  Logout
-                </NavLink>
-              </NavItem>
+            <Nav></Nav>
+          </Navbar.Collapse>
+          <NavLink tag={Link} to="/login">
+            Login
+          </NavLink>
+        </Navbar>
+      </div>
+    );
+  } else if (localStorage.getItem("token")) {
+    return (
+      <div>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <NavLink tag={Link} to="/">
+            Home
+          </NavLink>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <NavLink tag={Link} to="/oldtestament">
+                Old Testament
+              </NavLink>
+
+              <NavLink tag={Link} to="/newtestament">
+                New Testament
+              </NavLink>
+
+              <NavLink tag={Link} to="/antiguotestamento">
+                Antiguo Testamento
+              </NavLink>
+              <NavLink tag={Link} to="/nuevotestamento">
+                Nuevo Testamento
+              </NavLink>
             </Nav>
-          </Navbar>
-        </div>
-      );
-    }
+            <Nav></Nav>
+          </Navbar.Collapse>
+          <NavLink href="/" onClick={() => localStorage.clear()}>
+            Logout
+          </NavLink>
+        </Navbar>
+      </div>
+    );
   }
 }
 
