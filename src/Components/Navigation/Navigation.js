@@ -1,17 +1,21 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "reactstrap";
-
 import { Link } from "react-router-dom";
+
+import logo from "../../logo.jpg"
 
 function Navigation() {
   if (!localStorage.getItem("token")) {
     return (
       <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <NavLink tag={Link} to="/">
-            Home
-          </NavLink>
+                <Navbar.Brand>
+                <NavLink tag={Link} to="/">
+          <img src={logo} style={{width:50, height:50, marginTop: -7}} alt="logo"/>
+            </NavLink>
+            
+        </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
@@ -45,9 +49,12 @@ function Navigation() {
     return (
       <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <NavLink tag={Link} to="/">
-            Home
-          </NavLink>
+        <Navbar.Brand>
+                <NavLink tag={Link} to="/">
+          <img src={logo} style={{width:50, height:50, marginTop: -7}} alt="logo"/>
+            </NavLink>
+            
+        </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
