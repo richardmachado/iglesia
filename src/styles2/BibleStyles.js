@@ -5,8 +5,10 @@ export const Chapter = styled.div`
   width: 90%;
   margin-left: 2rem;
   font-weight: bold;
+  font-size: 1.5rem;
   text-align: left;
   background: url(${bible});
+  background-size: cover;
   color: black;
   padding-left: 1rem;
   padding-right: 1rem;
