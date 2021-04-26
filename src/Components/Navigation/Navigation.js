@@ -29,6 +29,9 @@ function Navigation() {
               <NavLink tag={Link} to="/nuevotestamento">
                 Nuevo Testamento
               </NavLink>
+              <NavLink tag={Link} to="/temas">
+                Temas
+              </NavLink>
             </Nav>
             <Nav></Nav>
           </Navbar.Collapse>
@@ -61,6 +64,9 @@ function Navigation() {
               </NavLink>
               <NavLink tag={Link} to="/nuevotestamento">
                 Nuevo Testamento
+              </NavLink>
+              <NavLink tag={Link} to="/temas">
+                Temas
               </NavLink>
             </Nav>
             <Nav></Nav>
