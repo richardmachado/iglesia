@@ -3,6 +3,10 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { withRouter, Link } from "react-router-dom";
 
+import { ToastContainer, toast, Zoom } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 import {
   Container,
   StyledForm,
@@ -16,7 +20,7 @@ const BACKEND_API = process.env.REACT_APP_BACKEND;
 function EdittingTemas(props) {
   const [getTemasDataById, setTemasDataById] = useState([]);
   const [editTemasDataById, latestEdit] = useState([]);
-  const [isLoading, setLoading] = useState(false);
+  // const [isLoading, setLoading] = useState(false);
 
   const { register, handleSubmit, errors } = useForm();
 
@@ -48,22 +52,25 @@ function EdittingTemas(props) {
   };
 
   const onSubmit = () => {
-    setLoading(true);
+    // setLoading(true);
     console.log("it's wokring");
     axios
       .put(
         `https://ijsv-backend.herokuapp.com/api/temas/${id}`,
         editTemasDataById
       )
+      .then((x) => new Promise((resolve) => setTimeout(() => resolve(x), 3000)))
       .then((res) => {
         props.history.push("/edittemas");
-        console.log("response", res);
       })
       .catch((err) => {
         alert((err.message = "Editing Tema Failed"));
         console.log(err.response);
       });
   };
+
+  const notify = () => toast.info("Editing !");
+
   return (
     <Container>
       <Link to="/edittemas">
@@ -173,15 +180,29 @@ function EdittingTemas(props) {
         </StyledForm>
 
         <div className="footer">
-          {!isLoading && <Button>Editar Tema</Button>}
+          <Button onClick={notify}>Editar Tema</Button>
 
-          {isLoading && (
-            <Button>
+          <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            closeButton="false"
+            hideProgressBar="false"
+            transition={Zoom}
+          />
+          {/* {isLoading && (<>
+            <Button onclick={notify}>
               <i className="fas fa-spinner fa-spin" disabled={isLoading}>
                 Editando Tema
               </i>
             </Button>
-          )}
+                 <ToastContainer
+                 position="top-right"
+                     autoClose={2000}
+                     closeButton="false"
+                     hideProgressBar="false"
+            />
+            </>
+          )} */}
           <p>Si nada cambio, usar el boton "cancel" arriba</p>
         </div>
       </form>

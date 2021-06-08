@@ -3,6 +3,10 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { withRouter, Link } from "react-router-dom";
 
+import { ToastContainer, toast, Zoom } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 import {
   Container,
   StyledForm,
@@ -16,7 +20,7 @@ const BACKEND_API = process.env.REACT_APP_BACKEND;
 
 function DeletingTemas(props) {
   const [getTemasDataById, setTemasDataById] = useState([]);
-  const [isLoading, setLoading] = useState(false);
+  // const [isLoading, setLoading] = useState(false);
 
   const { handleSubmit } = useForm();
 
@@ -35,9 +39,10 @@ function DeletingTemas(props) {
   }, [id]);
 
   const onSubmit = () => {
-    setLoading(true);
+    // setLoading(true);
     axios
       .delete(`${BACKEND_API}/temas/${id}`)
+      .then((x) => new Promise((resolve) => setTimeout(() => resolve(x), 3000)))
       .then((res) => {
         props.history.push("/deletetemas");
         console.log("response", res);
@@ -47,6 +52,8 @@ function DeletingTemas(props) {
         console.log(err.response);
       });
   };
+
+  const notify = () => toast.error("Deleting !");
   return (
     <Container>
       <StyledForm>
@@ -56,14 +63,14 @@ function DeletingTemas(props) {
             <Link to="/deletetemas">
               <CancelButton>Cancelar</CancelButton>
             </Link>
-            {!isLoading && <Button>Borrar Tema</Button>}
-            {isLoading && (
-              <Button>
-                <i className="fas fa-spinner fa-spin" disabled={isLoading}>
-                  Borrando Tema
-                </i>
-              </Button>
-            )}
+            <Button onClick={notify}>Borrar Tema</Button>
+            <ToastContainer
+              position="top-right"
+              autoClose={2000}
+              closeButton="false"
+              hideProgressBar="false"
+              transition={Zoom}
+            />
           </HeaderButtons>
 
           <p>Si no quiere borrar, usar el boton "cancelar"</p>

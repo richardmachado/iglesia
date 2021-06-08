@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   Container,
@@ -14,12 +18,13 @@ const BACKEND_API = process.env.REACT_APP_BACKEND;
 
 function AddTemas(props) {
   const { register, handleSubmit, errors } = useForm();
-  const [isLoading, setLoading] = useState(false);
+  // const [isLoading, setLoading] = useState(false);
 
   const onSubmit = (data) => {
-    setLoading(true);
+    // setLoading(true);
     axios
       .post(`${BACKEND_API}/temas`, data)
+      .then((x) => new Promise((resolve) => setTimeout(() => resolve(x), 3000)))
       .then((res) => {
         props.history.push("/edittemas");
       })
@@ -28,6 +33,8 @@ function AddTemas(props) {
         console.log(err.response);
       });
   };
+
+  const notify = () => toast.info("Submitting !");
 
   return (
     <Container>
@@ -124,15 +131,13 @@ function AddTemas(props) {
             })}
           />
           <div className="footer">
-            {!isLoading && <Button>Add Tema</Button>}
-
-            {isLoading && (
-              <Button>
-                <i className="fas fa-spinner fa-spin" disabled={isLoading}>
-                  Adding Tema
-                </i>
-              </Button>
-            )}
+            <Button onClick={notify}>Add Tema</Button>
+            <ToastContainer
+              position="top-right"
+              autoClose={2000}
+              closeButton="false"
+              hideProgressBar="false"
+            />
           </div>
         </StyledForm>
       </form>
