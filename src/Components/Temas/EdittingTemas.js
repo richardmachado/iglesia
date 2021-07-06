@@ -31,7 +31,6 @@ function EdittingTemas(props) {
       try {
         const result = await axios.get(`${BACKEND_API}/temas/${id}`);
         setTemasDataById(result.data[0]);
-        console.log("results.data", result.data);
       } catch (error) {
         console.log(error);
       }
@@ -53,7 +52,6 @@ function EdittingTemas(props) {
 
   const onSubmit = () => {
     // setLoading(true);
-    console.log("it's wokring");
     axios
       .put(
         `https://ijsv-backend.herokuapp.com/api/temas/${id}`,
@@ -189,20 +187,7 @@ function EdittingTemas(props) {
             hideProgressBar="false"
             transition={Zoom}
           />
-          {/* {isLoading && (<>
-            <Button onclick={notify}>
-              <i className="fas fa-spinner fa-spin" disabled={isLoading}>
-                Editando Tema
-              </i>
-            </Button>
-                 <ToastContainer
-                 position="top-right"
-                     autoClose={2000}
-                     closeButton="false"
-                     hideProgressBar="false"
-            />
-            </>
-          )} */}
+
           <p>Si nada cambio, usar el boton "cancel" arriba</p>
         </div>
       </form>
